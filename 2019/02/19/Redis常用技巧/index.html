@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="博客,Redis,">
 
 
 
@@ -81,17 +81,18 @@
 
 
 
-<meta name="description" content="如何通过Redis实现分布式锁分布式锁需要解决的问题 互斥性 (只能有一个客户端获取到锁) 安全性 (每个客户端只能解自己的锁) 死锁 (某个客户端因某些原因宕机,无法释放锁,其它客户端无法获取到锁,从而形成死锁)  实现SETNX key value : 如果key不存在,则创建并赋值 时间复杂度 : O(1) 返回值 : 设置成功,返回1,设置失败,返回0  如何解决SETNX长期有效的问题E">
+<meta name="description" content="参考:慕课网  如何通过Redis实现分布式锁分布式锁需要解决的问题 互斥性 (只能有一个客户端获取到锁) 安全性 (每个客户端只能解自己的锁) 死锁 (某个客户端因某些原因宕机,无法释放锁,其它客户端无法获取到锁,从而形成死锁)  实现SETNX key value : 如果key不存在,则创建并赋值 时间复杂度 : O(1) 返回值 : 设置成功,返回1,设置失败,返回0  如何解决SETN">
+<meta name="keywords" content="博客,Redis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Z">
+<meta property="og:title" content="Redis扩展">
 <meta property="og:url" content="http://yoursite.com/2019/02/19/Redis常用技巧/index.html">
 <meta property="og:site_name" content="Z">
-<meta property="og:description" content="如何通过Redis实现分布式锁分布式锁需要解决的问题 互斥性 (只能有一个客户端获取到锁) 安全性 (每个客户端只能解自己的锁) 死锁 (某个客户端因某些原因宕机,无法释放锁,其它客户端无法获取到锁,从而形成死锁)  实现SETNX key value : 如果key不存在,则创建并赋值 时间复杂度 : O(1) 返回值 : 设置成功,返回1,设置失败,返回0  如何解决SETNX长期有效的问题E">
+<meta property="og:description" content="参考:慕课网  如何通过Redis实现分布式锁分布式锁需要解决的问题 互斥性 (只能有一个客户端获取到锁) 安全性 (每个客户端只能解自己的锁) 死锁 (某个客户端因某些原因宕机,无法释放锁,其它客户端无法获取到锁,从而形成死锁)  实现SETNX key value : 如果key不存在,则创建并赋值 时间复杂度 : O(1) 返回值 : 设置成功,返回1,设置失败,返回0  如何解决SETN">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-19T14:43:05.258Z">
+<meta property="og:updated_time" content="2019-02-19T14:55:11.728Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Z">
-<meta name="twitter:description" content="如何通过Redis实现分布式锁分布式锁需要解决的问题 互斥性 (只能有一个客户端获取到锁) 安全性 (每个客户端只能解自己的锁) 死锁 (某个客户端因某些原因宕机,无法释放锁,其它客户端无法获取到锁,从而形成死锁)  实现SETNX key value : 如果key不存在,则创建并赋值 时间复杂度 : O(1) 返回值 : 设置成功,返回1,设置失败,返回0  如何解决SETNX长期有效的问题E">
+<meta name="twitter:title" content="Redis扩展">
+<meta name="twitter:description" content="参考:慕课网  如何通过Redis实现分布式锁分布式锁需要解决的问题 互斥性 (只能有一个客户端获取到锁) 安全性 (每个客户端只能解自己的锁) 死锁 (某个客户端因某些原因宕机,无法释放锁,其它客户端无法获取到锁,从而形成死锁)  实现SETNX key value : 如果key不存在,则创建并赋值 时间复杂度 : O(1) 返回值 : 设置成功,返回1,设置失败,返回0  如何解决SETN">
 
 
 
@@ -127,7 +128,7 @@
 
 
 
-  <title> | Z</title>
+  <title>Redis扩展 | Z</title>
   
 
 
@@ -315,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">Redis扩展</h1>
         
 
         <div class="post-meta">
@@ -327,7 +328,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-19T22:43:40+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-19T22:54:20+08:00">
                 2019-02-19
               </time>
             
@@ -337,6 +338,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -375,7 +398,10 @@
       
 
       
-        <h3 id="如何通过Redis实现分布式锁"><a href="#如何通过Redis实现分布式锁" class="headerlink" title="如何通过Redis实现分布式锁"></a>如何通过Redis实现分布式锁</h3><h4 id="分布式锁需要解决的问题"><a href="#分布式锁需要解决的问题" class="headerlink" title="分布式锁需要解决的问题"></a>分布式锁需要解决的问题</h4><ul>
+        <blockquote>
+<p>参考:<a href="https://coding.imooc.com/class/303.html" target="_blank" rel="noopener">慕课网</a></p>
+</blockquote>
+<h3 id="如何通过Redis实现分布式锁"><a href="#如何通过Redis实现分布式锁" class="headerlink" title="如何通过Redis实现分布式锁"></a>如何通过Redis实现分布式锁</h3><h4 id="分布式锁需要解决的问题"><a href="#分布式锁需要解决的问题" class="headerlink" title="分布式锁需要解决的问题"></a>分布式锁需要解决的问题</h4><ul>
 <li>互斥性 (只能有一个客户端获取到锁)</li>
 <li>安全性 (每个客户端只能解自己的锁)</li>
 <li>死锁 (某个客户端因某些原因宕机,无法释放锁,其它客户端无法获取到锁,从而形成死锁)</li>
@@ -479,6 +505,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/博客/" rel="tag"># 博客</a>
+          
+            <a href="/tags/Redis/" rel="tag"># Redis</a>
+          
+        </div>
       
 
       
