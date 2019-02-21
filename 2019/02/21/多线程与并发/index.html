@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Redis,博客,">
+  <meta name="keywords" content="java,多线程,并发,">
 
 
 
@@ -81,18 +81,20 @@
 
 
 
-<meta name="description" content="参考:慕课网  如何通过Redis实现分布式锁分布式锁需要解决的问题 互斥性 (只能有一个客户端获取到锁) 安全性 (每个客户端只能解自己的锁) 死锁 (某个客户端因某些原因宕机,无法释放锁,其它客户端无法获取到锁,从而形成死锁)  实现SETNX key value : 如果key不存在,则创建并赋值 时间复杂度 : O(1) 返回值 : 设置成功,返回1,设置失败,返回0  如何解决SETN">
-<meta name="keywords" content="Redis,博客">
+<meta name="description" content="参考:慕课网  Thred中 start 和 run 方法的区别 调用 start() 方法会创建一个新的子线程并启动  run() 方法只是 Thread 的一个普通方法的调用    Thread 和 Runnable 是什么关系 Thread 是实现了 Runnable 接口的类,使得 run 支持多线程 因为 java 的单一继承原则,推荐多使用 Runnable 接口   如何实现处理线">
+<meta name="keywords" content="java,多线程,并发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Redis扩展">
-<meta property="og:url" content="http://yoursite.com/2019/02/19/Redis扩展/index.html">
+<meta property="og:title" content="多线程与并发">
+<meta property="og:url" content="http://yoursite.com/2019/02/21/多线程与并发/index.html">
 <meta property="og:site_name" content="Z">
-<meta property="og:description" content="参考:慕课网  如何通过Redis实现分布式锁分布式锁需要解决的问题 互斥性 (只能有一个客户端获取到锁) 安全性 (每个客户端只能解自己的锁) 死锁 (某个客户端因某些原因宕机,无法释放锁,其它客户端无法获取到锁,从而形成死锁)  实现SETNX key value : 如果key不存在,则创建并赋值 时间复杂度 : O(1) 返回值 : 设置成功,返回1,设置失败,返回0  如何解决SETN">
+<meta property="og:description" content="参考:慕课网  Thred中 start 和 run 方法的区别 调用 start() 方法会创建一个新的子线程并启动  run() 方法只是 Thread 的一个普通方法的调用    Thread 和 Runnable 是什么关系 Thread 是实现了 Runnable 接口的类,使得 run 支持多线程 因为 java 的单一继承原则,推荐多使用 Runnable 接口   如何实现处理线">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-19T14:55:11.728Z">
+<meta property="og:image" content="http://yoursite.com/2019/02/21/多线程与并发/1.jpg">
+<meta property="og:updated_time" content="2019-02-21T14:07:24.384Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Redis扩展">
-<meta name="twitter:description" content="参考:慕课网  如何通过Redis实现分布式锁分布式锁需要解决的问题 互斥性 (只能有一个客户端获取到锁) 安全性 (每个客户端只能解自己的锁) 死锁 (某个客户端因某些原因宕机,无法释放锁,其它客户端无法获取到锁,从而形成死锁)  实现SETNX key value : 如果key不存在,则创建并赋值 时间复杂度 : O(1) 返回值 : 设置成功,返回1,设置失败,返回0  如何解决SETN">
+<meta name="twitter:title" content="多线程与并发">
+<meta name="twitter:description" content="参考:慕课网  Thred中 start 和 run 方法的区别 调用 start() 方法会创建一个新的子线程并启动  run() 方法只是 Thread 的一个普通方法的调用    Thread 和 Runnable 是什么关系 Thread 是实现了 Runnable 接口的类,使得 run 支持多线程 因为 java 的单一继承原则,推荐多使用 Runnable 接口   如何实现处理线">
+<meta name="twitter:image" content="http://yoursite.com/2019/02/21/多线程与并发/1.jpg">
 
 
 
@@ -122,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/19/Redis扩展/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/21/多线程与并发/">
 
 
 
 
 
-  <title>Redis扩展 | Z</title>
+  <title>多线程与并发 | Z</title>
   
 
 
@@ -297,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/19/Redis扩展/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/21/多线程与并发/">
     
 
 
@@ -316,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Redis扩展</h1>
+          <h1 class="post-title" itemprop="name headline">多线程与并发</h1>
         
 
         <div class="post-meta">
@@ -328,8 +330,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-19T22:54:20+08:00">
-                2019-02-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-21T22:04:51+08:00">
+                2019-02-21
               </time>
             
 
@@ -369,8 +371,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/02/19/Redis扩展/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/19/Redis扩展/" itemprop="commentCount"></span>
+                <a href="/2019/02/21/多线程与并发/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/21/多线程与并发/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -401,96 +403,69 @@
         <blockquote>
 <p>参考:<a href="https://coding.imooc.com/class/303.html" target="_blank" rel="noopener">慕课网</a></p>
 </blockquote>
-<h3 id="如何通过Redis实现分布式锁"><a href="#如何通过Redis实现分布式锁" class="headerlink" title="如何通过Redis实现分布式锁"></a>如何通过Redis实现分布式锁</h3><h4 id="分布式锁需要解决的问题"><a href="#分布式锁需要解决的问题" class="headerlink" title="分布式锁需要解决的问题"></a>分布式锁需要解决的问题</h4><ul>
-<li>互斥性 (只能有一个客户端获取到锁)</li>
-<li>安全性 (每个客户端只能解自己的锁)</li>
-<li>死锁 (某个客户端因某些原因宕机,无法释放锁,其它客户端无法获取到锁,从而形成死锁)</li>
+<h3 id="Thred中-start-和-run-方法的区别"><a href="#Thred中-start-和-run-方法的区别" class="headerlink" title="Thred中 start 和 run 方法的区别"></a>Thred中 start 和 run 方法的区别</h3><ul>
+<li><p>调用 start() 方法会创建一个新的子线程并启动</p>
+</li>
+<li><p>run() 方法只是 Thread 的一个普通方法的调用</p>
+</li>
 </ul>
-<h4 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h4><h5 id="SETNX-key-value-如果key不存在-则创建并赋值"><a href="#SETNX-key-value-如果key不存在-则创建并赋值" class="headerlink" title="SETNX key value : 如果key不存在,则创建并赋值"></a>SETNX key value : 如果key不存在,则创建并赋值</h5><ul>
-<li>时间复杂度 : O(1)</li>
-<li>返回值 : 设置成功,<code>返回1</code>,设置失败,<code>返回0</code></li>
+<hr>
+<h3 id="Thread-和-Runnable-是什么关系"><a href="#Thread-和-Runnable-是什么关系" class="headerlink" title="Thread 和 Runnable 是什么关系"></a>Thread 和 Runnable 是什么关系</h3><ul>
+<li>Thread 是实现了 Runnable 接口的类,使得 run 支持多线程</li>
+<li>因为 java 的单一继承原则,推荐多使用 Runnable 接口</li>
 </ul>
-<h6 id="如何解决SETNX长期有效的问题"><a href="#如何解决SETNX长期有效的问题" class="headerlink" title="如何解决SETNX长期有效的问题"></a>如何解决SETNX长期有效的问题</h6><p><strong>EXPIRE key seconds</strong></p>
+<hr>
+<h3 id="如何实现处理线程的返回值"><a href="#如何实现处理线程的返回值" class="headerlink" title="如何实现处理线程的返回值"></a>如何实现处理线程的返回值</h3><ul>
+<li>主线程等待法(让主线程循环等待返回值)</li>
+<li>使用 Thread 类的 join() 方法阻塞当前线程以等待子线程处理完毕</li>
+<li><p>通过 Callable 接口实现 : 通过 FutureTask 或 线程池获取</p>
+<p> 通过 FutureTask 实现线程返回值例子如下:</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyCallable</span> <span class="keyword">implements</span> <span class="title">Callable</span>&lt;<span class="title">String</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">call</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        String value = <span class="string">"test"</span>;</span><br><span class="line">        System.out.println(<span class="string">"Ready to work"</span>);</span><br><span class="line">        Thread.currentThread().sleep(<span class="number">5000</span>);</span><br><span class="line">        System.out.println(<span class="string">"Task down"</span>);</span><br><span class="line">        <span class="keyword">return</span> value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FutureTaskDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ExecutionException, InterruptedException </span>&#123;</span><br><span class="line">        FutureTask&lt;String&gt; task = <span class="keyword">new</span> FutureTask&lt;&gt;(<span class="keyword">new</span> MyCallable());</span><br><span class="line">        <span class="comment">// FutureTask 实现 RunnableFuture,RunnableFuture 继承 Runnable, Future</span></span><br><span class="line">        <span class="keyword">new</span> Thread(task).start();</span><br><span class="line">        <span class="keyword">if</span>(!task.isDone()) &#123;</span><br><span class="line">            System.out.println(<span class="string">"task is not finished"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"task return: "</span> + task.get());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 控制台输出</span></span><br><span class="line"><span class="comment">// task is not finished</span></span><br><span class="line"><span class="comment">// Ready to work</span></span><br><span class="line"><span class="comment">// 5秒后</span></span><br><span class="line"><span class="comment">// Task down</span></span><br><span class="line"><span class="comment">// task return: test</span></span><br></pre></td></tr></table></figure>
+<p>  通过线程池实现线程返回值例子如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreadPoolDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ExecutorService threadPool = Executors.newCachedThreadPool();</span><br><span class="line">        Future&lt;String&gt; future = threadPool.submit(<span class="keyword">new</span> MyCallable());</span><br><span class="line">        <span class="keyword">if</span>(!future.isDone()) &#123;</span><br><span class="line">            System.out.println(<span class="string">"task is not finished"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"task return: "</span> + future.get());</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ExecutionException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;  <span class="comment">// 关闭线程池</span></span><br><span class="line">            threadPool.shutdown();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 返回结果跟上面一样</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="线程的状态"><a href="#线程的状态" class="headerlink" title="线程的状态"></a>线程的状态</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">public enum State &#123;</span><br><span class="line">        /**</span><br><span class="line">         * Thread state for a thread which has not yet started.</span><br><span class="line">         */</span><br><span class="line">        NEW,</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        /**</span><br><span class="line">         * Thread state for a runnable thread.  A thread in the runnable</span><br><span class="line">         * state is executing in the Java virtual machine but it may</span><br><span class="line">         * be waiting for other resources from the operating system</span><br><span class="line">         * such as processor.</span><br><span class="line">         */</span><br><span class="line">        RUNNABLE,</span><br><span class="line"></span><br><span class="line">        /**</span><br><span class="line">         * Thread state for a thread blocked waiting for a monitor lock.</span><br><span class="line">         * A thread in the blocked state is waiting for a monitor lock</span><br><span class="line">         * to enter a synchronized block/method or</span><br><span class="line">         * reenter a synchronized block/method after calling</span><br><span class="line">         * &#123;@link Object#wait() Object.wait&#125;.</span><br><span class="line">         */</span><br><span class="line">        BLOCKED,</span><br><span class="line"></span><br><span class="line">        /**</span><br><span class="line">         * Thread state for a waiting thread.</span><br><span class="line">         * A thread is in the waiting state due to calling one of the</span><br><span class="line">         * following methods:</span><br><span class="line">         * &lt;ul&gt;</span><br><span class="line">         *   &lt;li&gt;&#123;@link Object#wait() Object.wait&#125; with no timeout&lt;/li&gt;</span><br><span class="line">         *   &lt;li&gt;&#123;@link #join() Thread.join&#125; with no timeout&lt;/li&gt;</span><br><span class="line">         *   &lt;li&gt;&#123;@link LockSupport#park() LockSupport.park&#125;&lt;/li&gt;</span><br><span class="line">         * &lt;/ul&gt;</span><br><span class="line">         *</span><br><span class="line">         * &lt;p&gt;A thread in the waiting state is waiting for another thread to</span><br><span class="line">         * perform a particular action.</span><br><span class="line">         *</span><br><span class="line">         * For example, a thread that has called &lt;tt&gt;Object.wait()&lt;/tt&gt;</span><br><span class="line">         * on an object is waiting for another thread to call</span><br><span class="line">         * &lt;tt&gt;Object.notify()&lt;/tt&gt; or &lt;tt&gt;Object.notifyAll()&lt;/tt&gt; on</span><br><span class="line">         * that object. A thread that has called &lt;tt&gt;Thread.join()&lt;/tt&gt;</span><br><span class="line">         * is waiting for a specified thread to terminate.</span><br><span class="line">         */</span><br><span class="line">        WAITING,</span><br><span class="line"></span><br><span class="line">        /**</span><br><span class="line">         * Thread state for a waiting thread with a specified waiting time.</span><br><span class="line">         * A thread is in the timed waiting state due to calling one of</span><br><span class="line">         * the following methods with a specified positive waiting time:</span><br><span class="line">         * &lt;ul&gt;</span><br><span class="line">         *   &lt;li&gt;&#123;@link #sleep Thread.sleep&#125;&lt;/li&gt;</span><br><span class="line">         *   &lt;li&gt;&#123;@link Object#wait(long) Object.wait&#125; with timeout&lt;/li&gt;</span><br><span class="line">         *   &lt;li&gt;&#123;@link #join(long) Thread.join&#125; with timeout&lt;/li&gt;</span><br><span class="line">         *   &lt;li&gt;&#123;@link LockSupport#parkNanos LockSupport.parkNanos&#125;&lt;/li&gt;</span><br><span class="line">         *   &lt;li&gt;&#123;@link LockSupport#parkUntil LockSupport.parkUntil&#125;&lt;/li&gt;</span><br><span class="line">         * &lt;/ul&gt;</span><br><span class="line">         */</span><br><span class="line">        TIMED_WAITING,</span><br><span class="line"></span><br><span class="line">        /**</span><br><span class="line">         * Thread state for a terminated thread.</span><br><span class="line">         * The thread has completed execution.</span><br><span class="line">         */</span><br><span class="line">        TERMINATED;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>设置key的生存时间,当key过期时(生存时间为0),会被自动删除</p>
-</li>
-<li><p>缺点 : <code>原子性</code>得不到满足,例子如下</p>
-<p>使用以上两条命令来实现分布式锁,伪代码如下:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">RedisService redisService = SpringUtils.getBean(RedisService.calss);</span><br><span class="line"><span class="keyword">long</span> status = redisService.setnx(key,<span class="string">"1"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(status == <span class="number">1</span>) &#123;</span><br><span class="line">    redisService.expire(key,expire);</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上面代码会出现一些问题,如果程序中<code>setnx</code>后程序挂掉了,来不及执行<code>expire</code>方法,此时key因为没有设置过期时间,就会一直被占用着</p>
-</li>
-</ul>
-<h5 id="SET-key-value-EX-seconds-PX-milliseconds-NX-XX-满足原子性需求"><a href="#SET-key-value-EX-seconds-PX-milliseconds-NX-XX-满足原子性需求" class="headerlink" title="SET key value [EX seconds] [PX milliseconds] [NX|XX]  (满足原子性需求)"></a>SET key value [EX seconds] [PX milliseconds] [NX|XX]  (满足原子性需求)</h5><ul>
-<li><strong>EX second : 设置键的过期时间为 second 秒</strong></li>
-<li><strong>PX milliseconds :  设置键的过期时间为 milliseconds 毫秒</strong> </li>
-<li><strong>NX : 只有键不存在时,才对键进行设置操作</strong></li>
-<li><strong>XX : 只在键已经存在时,才对键进行设置操作</strong></li>
-<li><strong>SET 操作成功完成时,返回<code>ok</code>,否则返回<code>nil</code></strong></li>
-</ul>
-<p>使用上述命令伪代码如下:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">RedisService redisService = SpringUtils.getBean(RedisService.class);</span><br><span class="line">String result = redisService.set(lockKey,requestId,SET_IF_NOT_EXIST,SET_WITH_EXPIRE_TIME,expireTime);</span><br><span class="line"><span class="keyword">if</span> (<span class="string">"ok"</span>.equals(result)) &#123;</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这样就可以保证分布式锁的原子性了</p>
-<h4 id="大量的-key-同时过期的注意事项"><a href="#大量的-key-同时过期的注意事项" class="headerlink" title="大量的 key 同时过期的注意事项"></a>大量的 key 同时过期的注意事项</h4><p><strong>集中过期,由于清除大量的key很耗时,会出现短暂的卡顿现象解决方案如下</strong></p>
-<p>解决方案 : 在设置key的过期时间的时候,给每个key的过期时间加上随机值</p>
-<hr>
-<h3 id="从海量Key里查询出某一固定前缀的Key"><a href="#从海量Key里查询出某一固定前缀的Key" class="headerlink" title="从海量Key里查询出某一固定前缀的Key"></a>从海量Key里查询出某一固定前缀的Key</h3><h4 id="KEYS-pattern-查找所有符合给定模式pattern的key"><a href="#KEYS-pattern-查找所有符合给定模式pattern的key" class="headerlink" title="KEYS pattern : 查找所有符合给定模式pattern的key"></a>KEYS pattern : 查找所有符合给定模式pattern的key</h4><ul>
-<li>KEYS指令<strong><code>一次性</code> </strong>返回所有匹配的key</li>
-<li>键的数量过大会使服务卡顿</li>
-</ul>
-<p>举例:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keys k1* // 此时如果数据量过大,可能会卡住</span><br></pre></td></tr></table></figure>
-<h4 id="SCAN-cursor-MATCH-pattern-COUNT-count"><a href="#SCAN-cursor-MATCH-pattern-COUNT-count" class="headerlink" title="SCAN cursor [MATCH pattern] [COUNT count]"></a>SCAN cursor [MATCH pattern] [COUNT count]</h4><ul>
-<li>基于游标的迭代器,需要基于上一次的游标延续之前的迭代过程</li>
-<li>以0作为游标开始一次新的迭代,直到命令返回游标0完成一次遍历</li>
-<li>不保证每次执行都返回某个给定数量的元素,支持模糊查询</li>
-<li>一次返回的数量不可控,只能是大概率符合count参数</li>
-</ul>
-<p>举例:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scan 0 match k1 count 10 // 开始迭代,返回以k1为前缀的key,一次返回10条,下一次执行时把0换成上一次执行返回的游标即可,有可能会发生返回的key重复的现象,我们可以把返回的key存入到hashset里面,从而起到去重的效果</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="如何使用Redis做异步队列"><a href="#如何使用Redis做异步队列" class="headerlink" title="如何使用Redis做异步队列"></a>如何使用Redis做异步队列</h3><h4 id="使用List作为队列-Rpush生产消息-Lpop消费消息"><a href="#使用List作为队列-Rpush生产消息-Lpop消费消息" class="headerlink" title="使用List作为队列,Rpush生产消息,Lpop消费消息"></a>使用List作为队列,Rpush生产消息,Lpop消费消息</h4><ul>
-<li>缺点 : 没有等待队列里有值就直接消费</li>
-<li>弥补 : 可以通过在应用层引入 Sleep 机制去调用 Lpop 重试</li>
-</ul>
-<h4 id="BLPOP-key-key-…-timeout-阻塞-直到队列有消息或者超时"><a href="#BLPOP-key-key-…-timeout-阻塞-直到队列有消息或者超时" class="headerlink" title="BLPOP key [key …] timeout : 阻塞,直到队列有消息或者超时"></a>BLPOP key [key …] timeout : 阻塞,直到队列有消息或者超时</h4><p>例子如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">blpop testlist 30</span><br><span class="line">// 此时消费者会等待生产者提供消息(在30秒有效时间内),如果有消息,消费者就会消费该消息</span><br><span class="line">// 使用 Blpop 可以代替 Sleep ,做到更好的消费消息</span><br></pre></td></tr></table></figure>
-<ul>
-<li>缺点 : 只能供一个消费者消费,解决办法:使用 pub/sub 模式</li>
-</ul>
-<h4 id="pub-sub-主题订阅者模式-实现一对多"><a href="#pub-sub-主题订阅者模式-实现一对多" class="headerlink" title="pub/sub : 主题订阅者模式(实现一对多)"></a>pub/sub : 主题订阅者模式(实现一对多)</h4><ul>
-<li>发送者(pub)发送消息,订阅者(sub)消费消息</li>
-<li>订阅者可以订阅任意数量的频道(Topic)</li>
-<li>缺点 : 消息的发布是无状态的,无法保证可达,解决方案:使用专业的mq</li>
+<li>新建(New) : 创建后尚未启动的线程的状态</li>
+<li>运行(Runnable) : 包含 Runnable 和 Ready</li>
+<li>无限期等待(Waiting) : 不会被分配 CPU 执行时间,需要显式被唤醒</li>
+<li>限期等待(Timed_Waiting) : 在一定时间后会由系统自动唤醒</li>
+<li>阻塞(Blocked) : 等待获取排它锁</li>
+<li>结束(Terminated) : 已终止线程的状态,线程已经结束执行</li>
 </ul>
 <hr>
-<h3 id="Redis如何做持久化"><a href="#Redis如何做持久化" class="headerlink" title="Redis如何做持久化"></a>Redis如何做持久化</h3><h4 id="RDB-快照-持久化-保存某个时间点的全量数据快照"><a href="#RDB-快照-持久化-保存某个时间点的全量数据快照" class="headerlink" title="RDB(快照)持久化:保存某个时间点的全量数据快照"></a>RDB(快照)持久化:保存某个时间点的全量数据快照</h4><p>​    在redis.conf文件中save 900 1 :这代表在900秒内有一条记录有写入指令就触发一次持久化</p>
-<p>​    stop-writes-on-bgsave-error yes :这代表当备份进程出错的时候,主进程就停止写入新的数据,这为了保证持久化的数据一致性的问题</p>
-<h5 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h5><ul>
-<li>内存数据的全量同步,数据量大会由于I/O而严重影响性能</li>
-<li>可能会因为Redis挂掉而丢失从当前至最近一次快照期间的数据</li>
+<h3 id="sleep和wait的区别"><a href="#sleep和wait的区别" class="headerlink" title="sleep和wait的区别"></a>sleep和wait的区别</h3><h4 id="基本区别"><a href="#基本区别" class="headerlink" title="基本区别"></a>基本区别</h4><ul>
+<li>sleep 是 Thread 类的方法, wait 是 Object 类中定义的方法</li>
+<li>sleep() 方法可以在任何地方使用</li>
+<li>wait() 方法只能在 synchronized 方法或 synchronized 块中使用</li>
 </ul>
-<h4 id="AOF-Append-Only-File-持久化-保存写状态"><a href="#AOF-Append-Only-File-持久化-保存写状态" class="headerlink" title="AOF (Append-Only-File) 持久化 : 保存写状态"></a>AOF (Append-Only-File) 持久化 : 保存写状态</h4><ul>
-<li><p>记录下除了查询以外的所有变更数据库状态的指令</p>
+<h4 id="本质区别"><a href="#本质区别" class="headerlink" title="本质区别"></a>本质区别</h4><ul>
+<li><p>Thread.sleep() 只会让出 CPU , 不会导致锁行为的改变</p>
 </li>
-<li><p>以append的形式追加保存到AOF文件中</p>
+<li><p>Object.wait() 不仅让出 CPU , 还会释放已经占有的同步资源锁</p>
 </li>
-</ul>
-<h4 id="RDB和AOF的优缺点"><a href="#RDB和AOF的优缺点" class="headerlink" title="RDB和AOF的优缺点"></a>RDB和AOF的优缺点</h4><ul>
-<li>RDB优点 : 全量数据快照,文件小,恢复快</li>
-<li>RDB缺点 : 无法保存最近一次快照之后的数据</li>
-<li>AOF优点 : 可读性高,适合保存增量数据,数据不易丢失</li>
-<li>AOF缺点 : 文件体积大,恢复时间长</li>
-</ul>
-<h4 id="RDB-AOF混合持久化方式-推荐"><a href="#RDB-AOF混合持久化方式-推荐" class="headerlink" title="RDB-AOF混合持久化方式(推荐)"></a>RDB-AOF混合持久化方式(推荐)</h4><ul>
-<li>BGSAVE做镜像全量持久化,AOF做增量持久化</li>
 </ul>
 <hr>
-<h3 id="使用-Pipeline-管道-的好处"><a href="#使用-Pipeline-管道-的好处" class="headerlink" title="使用 Pipeline (管道)的好处"></a>使用 Pipeline (管道)的好处</h3><ul>
-<li>Pipeline和Linux的管道类似</li>
-<li>Redis基于请求/响应模型,单个请求处理需要一一应答</li>
-<li>Pipeline批量执行指令,节省多次IO往返的时间</li>
-<li>有顺序依赖的指令建议分批发送</li>
+<h3 id="锁池和等待池"><a href="#锁池和等待池" class="headerlink" title="锁池和等待池"></a>锁池和等待池</h3><ul>
+<li><p>锁池(EntryList)</p>
+<p>​    假设线程 A 已经拥有了某个对象(不是类)的锁,而其它线程 B 和 C 想要调用这个对象的某个 synchronized 方法 (或者块) , 由于 B 和 C 线程在进入对象的某个 synchronized 方法 (或者块) , 由于 B 和 C 线程在进入对象 synchronized 方法之前必须获取到该对象锁的拥有权,而恰巧该对象的锁目前正在被线程 A 所占用,此时 B 和 C 线程就会被阻塞,进入一个地方去等待锁的释放,这个地方便是该对象的锁池</p>
+</li>
+<li><p>等待池(WaitSet)</p>
+<p>​    假设线程 A 调用了某个对象的 wait() 方法,线程 A 就会释放该对象的锁, 同时线程 A 就进入到了该对象的等待池中,进入到等待池中的线程不会去竞争该对象的锁</p>
+</li>
 </ul>
+<hr>
+<h3 id="yield-方法"><a href="#yield-方法" class="headerlink" title="yield()方法"></a>yield()方法</h3><p>当调用 Thread.yield() 方法时,会给线程调度器一个当前线程愿意让出 CPU 使用的暗示, 但是线程调度器可能会忽略这个暗示</p>
+<hr>
+<h3 id="如何中断线程"><a href="#如何中断线程" class="headerlink" title="如何中断线程"></a>如何中断线程</h3><p>调用 interrupt() , 通知线程应该中断了(与yield类似)</p>
+<ol>
+<li>如果线程处于被阻塞状态, 那么线程将立即退出被阻塞状态,并抛出一个 InterruptedException 异常</li>
+<li>如果线程处于正常活动状态,那么会将该线程的中断标志设置为 true, 被设置中断标志的线程将继续正常运行, 不受影响</li>
+</ol>
+<hr>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><img src="/2019/02/21/多线程与并发/1.jpg" alt="线程状态切换"></p>
 
       
     </div>
@@ -508,9 +483,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Redis/" rel="tag"># Redis</a>
+            <a href="/tags/java/" rel="tag"># java</a>
           
-            <a href="/tags/博客/" rel="tag"># 博客</a>
+            <a href="/tags/多线程/" rel="tag"># 多线程</a>
+          
+            <a href="/tags/并发/" rel="tag"># 并发</a>
           
         </div>
       
@@ -523,8 +500,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/11/Redis数据结构/" rel="next" title="Redis数据结构">
-                <i class="fa fa-chevron-left"></i> Redis数据结构
+              <a href="/2019/02/19/Redis扩展/" rel="next" title="Redis扩展">
+                <i class="fa fa-chevron-left"></i> Redis扩展
               </a>
             
           </div>
@@ -532,10 +509,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/21/多线程与并发/" rel="prev" title="多线程与并发">
-                多线程与并发 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -707,7 +680,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何通过Redis实现分布式锁"><span class="nav-number">1.</span> <span class="nav-text">如何通过Redis实现分布式锁</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分布式锁需要解决的问题"><span class="nav-number">1.1.</span> <span class="nav-text">分布式锁需要解决的问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现"><span class="nav-number">1.2.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#SETNX-key-value-如果key不存在-则创建并赋值"><span class="nav-number">1.2.1.</span> <span class="nav-text">SETNX key value : 如果key不存在,则创建并赋值</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#如何解决SETNX长期有效的问题"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">如何解决SETNX长期有效的问题</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SET-key-value-EX-seconds-PX-milliseconds-NX-XX-满足原子性需求"><span class="nav-number">1.2.2.</span> <span class="nav-text">SET key value [EX seconds] [PX milliseconds] [NX|XX]  (满足原子性需求)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#大量的-key-同时过期的注意事项"><span class="nav-number">1.3.</span> <span class="nav-text">大量的 key 同时过期的注意事项</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从海量Key里查询出某一固定前缀的Key"><span class="nav-number">2.</span> <span class="nav-text">从海量Key里查询出某一固定前缀的Key</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#KEYS-pattern-查找所有符合给定模式pattern的key"><span class="nav-number">2.1.</span> <span class="nav-text">KEYS pattern : 查找所有符合给定模式pattern的key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SCAN-cursor-MATCH-pattern-COUNT-count"><span class="nav-number">2.2.</span> <span class="nav-text">SCAN cursor [MATCH pattern] [COUNT count]</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何使用Redis做异步队列"><span class="nav-number">3.</span> <span class="nav-text">如何使用Redis做异步队列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用List作为队列-Rpush生产消息-Lpop消费消息"><span class="nav-number">3.1.</span> <span class="nav-text">使用List作为队列,Rpush生产消息,Lpop消费消息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BLPOP-key-key-…-timeout-阻塞-直到队列有消息或者超时"><span class="nav-number">3.2.</span> <span class="nav-text">BLPOP key [key …] timeout : 阻塞,直到队列有消息或者超时</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pub-sub-主题订阅者模式-实现一对多"><span class="nav-number">3.3.</span> <span class="nav-text">pub/sub : 主题订阅者模式(实现一对多)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis如何做持久化"><span class="nav-number">4.</span> <span class="nav-text">Redis如何做持久化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#RDB-快照-持久化-保存某个时间点的全量数据快照"><span class="nav-number">4.1.</span> <span class="nav-text">RDB(快照)持久化:保存某个时间点的全量数据快照</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#缺点"><span class="nav-number">4.1.1.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AOF-Append-Only-File-持久化-保存写状态"><span class="nav-number">4.2.</span> <span class="nav-text">AOF (Append-Only-File) 持久化 : 保存写状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RDB和AOF的优缺点"><span class="nav-number">4.3.</span> <span class="nav-text">RDB和AOF的优缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RDB-AOF混合持久化方式-推荐"><span class="nav-number">4.4.</span> <span class="nav-text">RDB-AOF混合持久化方式(推荐)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-Pipeline-管道-的好处"><span class="nav-number">5.</span> <span class="nav-text">使用 Pipeline (管道)的好处</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Thred中-start-和-run-方法的区别"><span class="nav-number">1.</span> <span class="nav-text">Thred中 start 和 run 方法的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thread-和-Runnable-是什么关系"><span class="nav-number">2.</span> <span class="nav-text">Thread 和 Runnable 是什么关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何实现处理线程的返回值"><span class="nav-number">3.</span> <span class="nav-text">如何实现处理线程的返回值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程的状态"><span class="nav-number">4.</span> <span class="nav-text">线程的状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sleep和wait的区别"><span class="nav-number">5.</span> <span class="nav-text">sleep和wait的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本区别"><span class="nav-number">5.1.</span> <span class="nav-text">基本区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本质区别"><span class="nav-number">5.2.</span> <span class="nav-text">本质区别</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#锁池和等待池"><span class="nav-number">6.</span> <span class="nav-text">锁池和等待池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#yield-方法"><span class="nav-number">7.</span> <span class="nav-text">yield()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何中断线程"><span class="nav-number">8.</span> <span class="nav-text">如何中断线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">9.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
