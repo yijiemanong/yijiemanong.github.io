@@ -81,20 +81,18 @@
 
 
 
-<meta name="description" content="参考:慕课网  Thred中 start 和 run 方法的区别 调用 start() 方法会创建一个新的子线程并启动  run() 方法只是 Thread 的一个普通方法的调用    Thread 和 Runnable 是什么关系 Thread 是实现了 Runnable 接口的类,使得 run 支持多线程 因为 java 的单一继承原则,推荐多使用 Runnable 接口   如何实现处理线">
+<meta name="description" content="参考:慕课网  synchronized的注意事项线程安全问题的主要诱因 存在共享数据(也称临界资源) 存在多条线程共同操作这些共享数据  解决问题的根本方法: ​    同一时刻有且只有一个线程在操作共享数据,其他线程必须等到该线程处理完数据后再对共享数据进行操作 互斥锁的特性 互斥性: 即在同一时间只允许一个线程持有某个对象锁,通过这种特性来实现多线程的协调机制,这样在同一时间只有一个线程对">
 <meta name="keywords" content="java,多线程,并发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="多线程与并发">
-<meta property="og:url" content="http://yoursite.com/2019/02/21/多线程与并发/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/02/23/多线程与并发原理/index.html">
 <meta property="og:site_name" content="Z">
-<meta property="og:description" content="参考:慕课网  Thred中 start 和 run 方法的区别 调用 start() 方法会创建一个新的子线程并启动  run() 方法只是 Thread 的一个普通方法的调用    Thread 和 Runnable 是什么关系 Thread 是实现了 Runnable 接口的类,使得 run 支持多线程 因为 java 的单一继承原则,推荐多使用 Runnable 接口   如何实现处理线">
+<meta property="og:description" content="参考:慕课网  synchronized的注意事项线程安全问题的主要诱因 存在共享数据(也称临界资源) 存在多条线程共同操作这些共享数据  解决问题的根本方法: ​    同一时刻有且只有一个线程在操作共享数据,其他线程必须等到该线程处理完数据后再对共享数据进行操作 互斥锁的特性 互斥性: 即在同一时间只允许一个线程持有某个对象锁,通过这种特性来实现多线程的协调机制,这样在同一时间只有一个线程对">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2019/02/21/多线程与并发/1.jpg">
-<meta property="og:updated_time" content="2019-02-21T14:07:24.384Z">
+<meta property="og:updated_time" content="2019-02-23T14:51:12.650Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="多线程与并发">
-<meta name="twitter:description" content="参考:慕课网  Thred中 start 和 run 方法的区别 调用 start() 方法会创建一个新的子线程并启动  run() 方法只是 Thread 的一个普通方法的调用    Thread 和 Runnable 是什么关系 Thread 是实现了 Runnable 接口的类,使得 run 支持多线程 因为 java 的单一继承原则,推荐多使用 Runnable 接口   如何实现处理线">
-<meta name="twitter:image" content="http://yoursite.com/2019/02/21/多线程与并发/1.jpg">
+<meta name="twitter:description" content="参考:慕课网  synchronized的注意事项线程安全问题的主要诱因 存在共享数据(也称临界资源) 存在多条线程共同操作这些共享数据  解决问题的根本方法: ​    同一时刻有且只有一个线程在操作共享数据,其他线程必须等到该线程处理完数据后再对共享数据进行操作 互斥锁的特性 互斥性: 即在同一时间只允许一个线程持有某个对象锁,通过这种特性来实现多线程的协调机制,这样在同一时间只有一个线程对">
 
 
 
@@ -124,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/21/多线程与并发/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/23/多线程与并发原理/">
 
 
 
@@ -299,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/21/多线程与并发/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/23/多线程与并发原理/">
     
 
 
@@ -330,8 +328,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-21T22:04:51+08:00">
-                2019-02-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-23T22:50:51+08:00">
+                2019-02-23
               </time>
             
 
@@ -371,8 +369,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/02/21/多线程与并发/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/21/多线程与并发/" itemprop="commentCount"></span>
+                <a href="/2019/02/23/多线程与并发原理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/23/多线程与并发原理/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -403,69 +401,100 @@
         <blockquote>
 <p>参考:<a href="https://coding.imooc.com/class/303.html" target="_blank" rel="noopener">慕课网</a></p>
 </blockquote>
-<h3 id="Thred中-start-和-run-方法的区别"><a href="#Thred中-start-和-run-方法的区别" class="headerlink" title="Thred中 start 和 run 方法的区别"></a>Thred中 start 和 run 方法的区别</h3><ul>
-<li><p>调用 start() 方法会创建一个新的子线程并启动</p>
+<h3 id="synchronized的注意事项"><a href="#synchronized的注意事项" class="headerlink" title="synchronized的注意事项"></a>synchronized的注意事项</h3><h4 id="线程安全问题的主要诱因"><a href="#线程安全问题的主要诱因" class="headerlink" title="线程安全问题的主要诱因"></a>线程安全问题的主要诱因</h4><ul>
+<li>存在<strong>共享数据</strong>(也称临界资源)</li>
+<li>存在多条线程共同操作这些<strong>共享数据</strong></li>
+</ul>
+<p><strong>解决问题的根本方法</strong>:</p>
+<p>​    同一时刻有且只有一个线程在操作共享数据,其他线程必须等到该线程处理完数据后再对共享数据进行操作</p>
+<h4 id="互斥锁的特性"><a href="#互斥锁的特性" class="headerlink" title="互斥锁的特性"></a>互斥锁的特性</h4><ul>
+<li>互斥性: 即在同一时间只允许一个线程持有某个对象锁,通过这种特性来实现多线程的协调机制,这样在同一时间只有一个线程对需要同步的代码块(复合操作)进行访问.互斥性也称为操作的原子性</li>
+<li>可见性: 必须确保在锁被释放之前,对共享变量所做的修改,对于随后获得该锁的另一个线程是可见的(即在获得锁时应获得最新共享变量的值),否则另一个线程可能是在本地缓存的某个副本上继续操作,从而引起不一致</li>
+</ul>
+<p>注意: synchronized 锁的不是代码,锁的都是对象</p>
+<h4 id="对象锁和类锁的总结"><a href="#对象锁和类锁的总结" class="headerlink" title="对象锁和类锁的总结"></a>对象锁和类锁的总结</h4><ul>
+<li><p>有线程访问对象的<code>同步代码块</code>时,另外的线程可以访问该对象的<code>非同步代码块</code></p>
 </li>
-<li><p>run() 方法只是 Thread 的一个普通方法的调用</p>
+<li><p>若锁住的是同一个对象,一个线程在访问对象的<code>同步代码块</code>时,另一个访问对象的<code>同步代码块</code>的线程会被阻塞</p>
 </li>
-</ul>
-<hr>
-<h3 id="Thread-和-Runnable-是什么关系"><a href="#Thread-和-Runnable-是什么关系" class="headerlink" title="Thread 和 Runnable 是什么关系"></a>Thread 和 Runnable 是什么关系</h3><ul>
-<li>Thread 是实现了 Runnable 接口的类,使得 run 支持多线程</li>
-<li>因为 java 的单一继承原则,推荐多使用 Runnable 接口</li>
-</ul>
-<hr>
-<h3 id="如何实现处理线程的返回值"><a href="#如何实现处理线程的返回值" class="headerlink" title="如何实现处理线程的返回值"></a>如何实现处理线程的返回值</h3><ul>
-<li>主线程等待法(让主线程循环等待返回值)</li>
-<li>使用 Thread 类的 join() 方法阻塞当前线程以等待子线程处理完毕</li>
-<li><p>通过 Callable 接口实现 : 通过 FutureTask 或 线程池获取</p>
-<p> 通过 FutureTask 实现线程返回值例子如下:</p>
+<li><p>若锁住的是同一个对象,一个线程在访问对象的<code>同步方法</code>时,另一个访问对象<code>同步方法</code>的线程会被阻塞</p>
 </li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyCallable</span> <span class="keyword">implements</span> <span class="title">Callable</span>&lt;<span class="title">String</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">call</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        String value = <span class="string">"test"</span>;</span><br><span class="line">        System.out.println(<span class="string">"Ready to work"</span>);</span><br><span class="line">        Thread.currentThread().sleep(<span class="number">5000</span>);</span><br><span class="line">        System.out.println(<span class="string">"Task down"</span>);</span><br><span class="line">        <span class="keyword">return</span> value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FutureTaskDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ExecutionException, InterruptedException </span>&#123;</span><br><span class="line">        FutureTask&lt;String&gt; task = <span class="keyword">new</span> FutureTask&lt;&gt;(<span class="keyword">new</span> MyCallable());</span><br><span class="line">        <span class="comment">// FutureTask 实现 RunnableFuture,RunnableFuture 继承 Runnable, Future</span></span><br><span class="line">        <span class="keyword">new</span> Thread(task).start();</span><br><span class="line">        <span class="keyword">if</span>(!task.isDone()) &#123;</span><br><span class="line">            System.out.println(<span class="string">"task is not finished"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"task return: "</span> + task.get());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 控制台输出</span></span><br><span class="line"><span class="comment">// task is not finished</span></span><br><span class="line"><span class="comment">// Ready to work</span></span><br><span class="line"><span class="comment">// 5秒后</span></span><br><span class="line"><span class="comment">// Task down</span></span><br><span class="line"><span class="comment">// task return: test</span></span><br></pre></td></tr></table></figure>
-<p>  通过线程池实现线程返回值例子如下:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreadPoolDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ExecutorService threadPool = Executors.newCachedThreadPool();</span><br><span class="line">        Future&lt;String&gt; future = threadPool.submit(<span class="keyword">new</span> MyCallable());</span><br><span class="line">        <span class="keyword">if</span>(!future.isDone()) &#123;</span><br><span class="line">            System.out.println(<span class="string">"task is not finished"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"task return: "</span> + future.get());</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ExecutionException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;  <span class="comment">// 关闭线程池</span></span><br><span class="line">            threadPool.shutdown();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 返回结果跟上面一样</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="线程的状态"><a href="#线程的状态" class="headerlink" title="线程的状态"></a>线程的状态</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">public enum State &#123;</span><br><span class="line">        /**</span><br><span class="line">         * Thread state for a thread which has not yet started.</span><br><span class="line">         */</span><br><span class="line">        NEW,</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        /**</span><br><span class="line">         * Thread state for a runnable thread.  A thread in the runnable</span><br><span class="line">         * state is executing in the Java virtual machine but it may</span><br><span class="line">         * be waiting for other resources from the operating system</span><br><span class="line">         * such as processor.</span><br><span class="line">         */</span><br><span class="line">        RUNNABLE,</span><br><span class="line"></span><br><span class="line">        /**</span><br><span class="line">         * Thread state for a thread blocked waiting for a monitor lock.</span><br><span class="line">         * A thread in the blocked state is waiting for a monitor lock</span><br><span class="line">         * to enter a synchronized block/method or</span><br><span class="line">         * reenter a synchronized block/method after calling</span><br><span class="line">         * &#123;@link Object#wait() Object.wait&#125;.</span><br><span class="line">         */</span><br><span class="line">        BLOCKED,</span><br><span class="line"></span><br><span class="line">        /**</span><br><span class="line">         * Thread state for a waiting thread.</span><br><span class="line">         * A thread is in the waiting state due to calling one of the</span><br><span class="line">         * following methods:</span><br><span class="line">         * &lt;ul&gt;</span><br><span class="line">         *   &lt;li&gt;&#123;@link Object#wait() Object.wait&#125; with no timeout&lt;/li&gt;</span><br><span class="line">         *   &lt;li&gt;&#123;@link #join() Thread.join&#125; with no timeout&lt;/li&gt;</span><br><span class="line">         *   &lt;li&gt;&#123;@link LockSupport#park() LockSupport.park&#125;&lt;/li&gt;</span><br><span class="line">         * &lt;/ul&gt;</span><br><span class="line">         *</span><br><span class="line">         * &lt;p&gt;A thread in the waiting state is waiting for another thread to</span><br><span class="line">         * perform a particular action.</span><br><span class="line">         *</span><br><span class="line">         * For example, a thread that has called &lt;tt&gt;Object.wait()&lt;/tt&gt;</span><br><span class="line">         * on an object is waiting for another thread to call</span><br><span class="line">         * &lt;tt&gt;Object.notify()&lt;/tt&gt; or &lt;tt&gt;Object.notifyAll()&lt;/tt&gt; on</span><br><span class="line">         * that object. A thread that has called &lt;tt&gt;Thread.join()&lt;/tt&gt;</span><br><span class="line">         * is waiting for a specified thread to terminate.</span><br><span class="line">         */</span><br><span class="line">        WAITING,</span><br><span class="line"></span><br><span class="line">        /**</span><br><span class="line">         * Thread state for a waiting thread with a specified waiting time.</span><br><span class="line">         * A thread is in the timed waiting state due to calling one of</span><br><span class="line">         * the following methods with a specified positive waiting time:</span><br><span class="line">         * &lt;ul&gt;</span><br><span class="line">         *   &lt;li&gt;&#123;@link #sleep Thread.sleep&#125;&lt;/li&gt;</span><br><span class="line">         *   &lt;li&gt;&#123;@link Object#wait(long) Object.wait&#125; with timeout&lt;/li&gt;</span><br><span class="line">         *   &lt;li&gt;&#123;@link #join(long) Thread.join&#125; with timeout&lt;/li&gt;</span><br><span class="line">         *   &lt;li&gt;&#123;@link LockSupport#parkNanos LockSupport.parkNanos&#125;&lt;/li&gt;</span><br><span class="line">         *   &lt;li&gt;&#123;@link LockSupport#parkUntil LockSupport.parkUntil&#125;&lt;/li&gt;</span><br><span class="line">         * &lt;/ul&gt;</span><br><span class="line">         */</span><br><span class="line">        TIMED_WAITING,</span><br><span class="line"></span><br><span class="line">        /**</span><br><span class="line">         * Thread state for a terminated thread.</span><br><span class="line">         * The thread has completed execution.</span><br><span class="line">         */</span><br><span class="line">        TERMINATED;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>新建(New) : 创建后尚未启动的线程的状态</li>
-<li>运行(Runnable) : 包含 Runnable 和 Ready</li>
-<li>无限期等待(Waiting) : 不会被分配 CPU 执行时间,需要显式被唤醒</li>
-<li>限期等待(Timed_Waiting) : 在一定时间后会由系统自动唤醒</li>
-<li>阻塞(Blocked) : 等待获取排它锁</li>
-<li>结束(Terminated) : 已终止线程的状态,线程已经结束执行</li>
-</ul>
-<hr>
-<h3 id="sleep和wait的区别"><a href="#sleep和wait的区别" class="headerlink" title="sleep和wait的区别"></a>sleep和wait的区别</h3><h4 id="基本区别"><a href="#基本区别" class="headerlink" title="基本区别"></a>基本区别</h4><ul>
-<li>sleep 是 Thread 类的方法, wait 是 Object 类中定义的方法</li>
-<li>sleep() 方法可以在任何地方使用</li>
-<li>wait() 方法只能在 synchronized 方法或 synchronized 块中使用</li>
-</ul>
-<h4 id="本质区别"><a href="#本质区别" class="headerlink" title="本质区别"></a>本质区别</h4><ul>
-<li><p>Thread.sleep() 只会让出 CPU , 不会导致锁行为的改变</p>
+<li><p>若锁住的是同一个对象,一个线程在访问对象的<code>同步代码块</code>时,另一个访问对象<code>同步方法</code>的线程会被阻塞,反之亦然</p>
 </li>
-<li><p>Object.wait() 不仅让出 CPU , 还会释放已经占有的同步资源锁</p>
+<li><p>同一个类的不同对象的对象锁互不干扰</p>
+</li>
+<li><p>类锁由于也是一种特殊的对象锁,因此表现和上述1,2,3,4一致,而由于一个类只有一把对象锁,所以同一个类的不同对象使用类锁将会是同步的</p>
+</li>
+<li><p>类锁和对象锁互不干扰</p>
 </li>
 </ul>
 <hr>
-<h3 id="锁池和等待池"><a href="#锁池和等待池" class="headerlink" title="锁池和等待池"></a>锁池和等待池</h3><ul>
-<li><p>锁池(EntryList)</p>
-<p>​    假设线程 A 已经拥有了某个对象(不是类)的锁,而其它线程 B 和 C 想要调用这个对象的某个 synchronized 方法 (或者块) , 由于 B 和 C 线程在进入对象的某个 synchronized 方法 (或者块) , 由于 B 和 C 线程在进入对象 synchronized 方法之前必须获取到该对象锁的拥有权,而恰巧该对象的锁目前正在被线程 A 所占用,此时 B 和 C 线程就会被阻塞,进入一个地方去等待锁的释放,这个地方便是该对象的锁池</p>
-</li>
-<li><p>等待池(WaitSet)</p>
-<p>​    假设线程 A 调用了某个对象的 wait() 方法,线程 A 就会释放该对象的锁, 同时线程 A 就进入到了该对象的等待池中,进入到等待池中的线程不会去竞争该对象的锁</p>
-</li>
+<h3 id="自旋锁与自适应自旋锁"><a href="#自旋锁与自适应自旋锁" class="headerlink" title="自旋锁与自适应自旋锁"></a>自旋锁与自适应自旋锁</h3><h4 id="自旋锁"><a href="#自旋锁" class="headerlink" title="自旋锁"></a>自旋锁</h4><ul>
+<li>许多情况下,共享数据的锁定状态持续时间较短,切换线程不值得</li>
+<li>通过让线程执行忙循环等待锁的释放,不让出CPU</li>
+<li>缺点: 若锁被其他线程长时间占用,会带来许多性能上的开销</li>
+</ul>
+<h4 id="自适应自旋锁"><a href="#自适应自旋锁" class="headerlink" title="自适应自旋锁"></a>自适应自旋锁</h4><ul>
+<li>自旋的次数不再固定</li>
+<li>由前一次在同一个锁上的自旋时间及锁的拥有者的状态来决定</li>
+</ul>
+<h4 id="锁消除"><a href="#锁消除" class="headerlink" title="锁消除"></a>锁消除</h4><ul>
+<li>JIT编译时,对运行上下文进行扫描,去除不可能存在竞争的锁</li>
+</ul>
+<h4 id="锁粗化"><a href="#锁粗化" class="headerlink" title="锁粗化"></a>锁粗化</h4><ul>
+<li>通过扩大加锁的范围,避免反复加锁和解锁</li>
 </ul>
 <hr>
-<h3 id="yield-方法"><a href="#yield-方法" class="headerlink" title="yield()方法"></a>yield()方法</h3><p>当调用 Thread.yield() 方法时,会给线程调度器一个当前线程愿意让出 CPU 使用的暗示, 但是线程调度器可能会忽略这个暗示</p>
+<h3 id="synchronized的四种状态"><a href="#synchronized的四种状态" class="headerlink" title="synchronized的四种状态"></a>synchronized的四种状态</h3><ul>
+<li>锁膨胀方向: 无锁 -&gt; 偏向锁 -&gt; 轻量级锁 -&gt; 重量级锁</li>
+</ul>
+<h4 id="偏向锁"><a href="#偏向锁" class="headerlink" title="偏向锁"></a>偏向锁</h4><ul>
+<li>大多数情况下,锁不存在多线程竞争,总是由同一线程多次获得</li>
+<li>缺点: 不适用于锁竞争比较激烈的多线程场合</li>
+</ul>
+<p><strong>核心思想:</strong></p>
+<p>​    如果一个线程获得了锁,那么锁就进入偏向模式,此时 Mark Word 的结构也变为偏向锁结构,当该线程再次请求锁时,无需再做任何同步操作,即获取锁的过程只需要检查 Mark Word 的锁标记位为偏向锁以及当前线程 Id 等于 Mark Word 的 ThreadId 即可,这样就省去了大量有关锁申请的操作</p>
+<h4 id="轻量级锁"><a href="#轻量级锁" class="headerlink" title="轻量级锁"></a>轻量级锁</h4><p>轻量级锁是由偏向锁升级来的,偏向锁运行在一个线程进入同步快的情况下,当第二个线程加入锁争用的时候,偏向锁就会升级为轻量级锁</p>
+<p>适应的场景: 线程交替执行同步快</p>
+<p>若存在同一时间访问同一锁的情况,就会导致轻量级锁膨胀为重量级锁</p>
+<table>
+<thead>
+<tr>
+<th>锁</th>
+<th>优点</th>
+<th>缺点</th>
+<th>使用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>偏向锁</td>
+<td>加锁和解锁不需要CAS操作,没有额外的性能消耗,和执行非同步方法相比仅存在纳秒级的差距</td>
+<td>如果线程间存在锁竞争,会带来额外的锁撤销的消耗</td>
+<td>同一个线程访问同步块或者同步方法的场景</td>
+</tr>
+<tr>
+<td>轻量级锁</td>
+<td>竞争的线程不会阻塞,提高了响应速度</td>
+<td>若线程长时间抢不到锁,自旋会消耗CPU性能</td>
+<td>线程交替执行同步块或者同步方法的场景</td>
+</tr>
+<tr>
+<td>重量级锁</td>
+<td>线程竞争不适用自旋,不会消耗CPU</td>
+<td>线程阻塞,响应时间缓慢,在多线程下,频繁的获取释放锁,会带来巨大的性能消耗</td>
+<td>追求吞吐量,同步块或者同步方法执行时间较长的场景</td>
+</tr>
+</tbody>
+</table>
 <hr>
-<h3 id="如何中断线程"><a href="#如何中断线程" class="headerlink" title="如何中断线程"></a>如何中断线程</h3><p>调用 interrupt() , 通知线程应该中断了(与yield类似)</p>
-<ol>
-<li>如果线程处于被阻塞状态, 那么线程将立即退出被阻塞状态,并抛出一个 InterruptedException 异常</li>
-<li>如果线程处于正常活动状态,那么会将该线程的中断标志设置为 true, 被设置中断标志的线程将继续正常运行, 不受影响</li>
-</ol>
-<hr>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><img src="/2019/02/21/多线程与并发/1.jpg" alt="线程状态切换"></p>
+<h3 id="volatile和synchronized的区别"><a href="#volatile和synchronized的区别" class="headerlink" title="volatile和synchronized的区别"></a>volatile和synchronized的区别</h3><ul>
+<li>volatile本质是告诉JVM当前变量在寄存器(工作内存)中的值是不确定的,需要从内存中读取;synchronized则是锁定当前变量,只有当前线程可以访问该变量,其他线程被阻塞住直到该线程完成变量操作为止</li>
+<li>volatile仅能使用在变量级别;synchronized则可以使用在变量,方法和类级别</li>
+<li>volatile仅能实现变量的修改可见性,不能保证原子性;而synchronized则可以保证变量修改的可见性和原子性</li>
+<li>volatile不会造成线程的阻塞;synchronized可能会造成线程的阻塞</li>
+<li>volatile标记的变量不会被编译器优化;synchronized标记的变量可以被编译器优化</li>
+</ul>
 
       
     </div>
@@ -500,8 +529,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/19/Redis扩展/" rel="next" title="Redis扩展">
-                <i class="fa fa-chevron-left"></i> Redis扩展
+              <a href="/2019/02/21/多线程与并发/" rel="next" title="多线程与并发">
+                <i class="fa fa-chevron-left"></i> 多线程与并发
               </a>
             
           </div>
@@ -509,10 +538,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/23/多线程与并发原理/" rel="prev" title="多线程与并发">
-                多线程与并发 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -684,7 +709,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Thred中-start-和-run-方法的区别"><span class="nav-number">1.</span> <span class="nav-text">Thred中 start 和 run 方法的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thread-和-Runnable-是什么关系"><span class="nav-number">2.</span> <span class="nav-text">Thread 和 Runnable 是什么关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何实现处理线程的返回值"><span class="nav-number">3.</span> <span class="nav-text">如何实现处理线程的返回值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程的状态"><span class="nav-number">4.</span> <span class="nav-text">线程的状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sleep和wait的区别"><span class="nav-number">5.</span> <span class="nav-text">sleep和wait的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本区别"><span class="nav-number">5.1.</span> <span class="nav-text">基本区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本质区别"><span class="nav-number">5.2.</span> <span class="nav-text">本质区别</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#锁池和等待池"><span class="nav-number">6.</span> <span class="nav-text">锁池和等待池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#yield-方法"><span class="nav-number">7.</span> <span class="nav-text">yield()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何中断线程"><span class="nav-number">8.</span> <span class="nav-text">如何中断线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">9.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#synchronized的注意事项"><span class="nav-number">1.</span> <span class="nav-text">synchronized的注意事项</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#线程安全问题的主要诱因"><span class="nav-number">1.1.</span> <span class="nav-text">线程安全问题的主要诱因</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#互斥锁的特性"><span class="nav-number">1.2.</span> <span class="nav-text">互斥锁的特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象锁和类锁的总结"><span class="nav-number">1.3.</span> <span class="nav-text">对象锁和类锁的总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自旋锁与自适应自旋锁"><span class="nav-number">2.</span> <span class="nav-text">自旋锁与自适应自旋锁</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#自旋锁"><span class="nav-number">2.1.</span> <span class="nav-text">自旋锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自适应自旋锁"><span class="nav-number">2.2.</span> <span class="nav-text">自适应自旋锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#锁消除"><span class="nav-number">2.3.</span> <span class="nav-text">锁消除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#锁粗化"><span class="nav-number">2.4.</span> <span class="nav-text">锁粗化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#synchronized的四种状态"><span class="nav-number">3.</span> <span class="nav-text">synchronized的四种状态</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#偏向锁"><span class="nav-number">3.1.</span> <span class="nav-text">偏向锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#轻量级锁"><span class="nav-number">3.2.</span> <span class="nav-text">轻量级锁</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#volatile和synchronized的区别"><span class="nav-number">4.</span> <span class="nav-text">volatile和synchronized的区别</span></a></li></ol></div>
             
 
           </div>

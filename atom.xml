@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-02-21T14:07:24.384Z</updated>
+  <updated>2019-02-23T14:51:12.650Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>多线程与并发</title>
+    <link href="http://yoursite.com/2019/02/23/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%B9%B6%E5%8F%91%E5%8E%9F%E7%90%86/"/>
+    <id>http://yoursite.com/2019/02/23/多线程与并发原理/</id>
+    <published>2019-02-23T14:50:51.000Z</published>
+    <updated>2019-02-23T14:51:12.650Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>参考:<a href="https://coding.imooc.com/class/303.html" target="_blank" rel="noopener">慕课网</a></p></blockquote><h3 id="synchronized的注意事项"><a href="#synchronized的注意事项" class="headerlink" title="synchronized的注意事项"></a>synchronized的注意事项</h3><h4 id="线程安全问题的主要诱因"><a href="#线程安全问题的主要诱因" class="headerlink" title="线程安全问题的主要诱因"></a>线程安全问题的主要诱因</h4><ul><li>存在<strong>共享数据</strong>(也称临界资源)</li><li>存在多条线程共同操作这些<strong>共享数据</strong></li></ul><p><strong>解决问题的根本方法</strong>:</p><p>​    同一时刻有且只有一个线程在操作共享数据,其他线程必须等到该线程处理完数据后再对共享数据进行操作</p><h4 id="互斥锁的特性"><a href="#互斥锁的特性" class="headerlink" title="互斥锁的特性"></a>互斥锁的特性</h4><ul><li>互斥性: 即在同一时间只允许一个线程持有某个对象锁,通过这种特性来实现多线程的协调机制,这样在同一时间只有一个线程对需要同步的代码块(复合操作)进行访问.互斥性也称为操作的原子性</li><li>可见性: 必须确保在锁被释放之前,对共享变量所做的修改,对于随后获得该锁的另一个线程是可见的(即在获得锁时应获得最新共享变量的值),否则另一个线程可能是在本地缓存的某个副本上继续操作,从而引起不一致</li></ul><p>注意: synchronized 锁的不是代码,锁的都是对象</p><h4 id="对象锁和类锁的总结"><a href="#对象锁和类锁的总结" class="headerlink" title="对象锁和类锁的总结"></a>对象锁和类锁的总结</h4><ul><li><p>有线程访问对象的<code>同步代码块</code>时,另外的线程可以访问该对象的<code>非同步代码块</code></p></li><li><p>若锁住的是同一个对象,一个线程在访问对象的<code>同步代码块</code>时,另一个访问对象的<code>同步代码块</code>的线程会被阻塞</p></li><li><p>若锁住的是同一个对象,一个线程在访问对象的<code>同步方法</code>时,另一个访问对象<code>同步方法</code>的线程会被阻塞</p></li><li><p>若锁住的是同一个对象,一个线程在访问对象的<code>同步代码块</code>时,另一个访问对象<code>同步方法</code>的线程会被阻塞,反之亦然</p></li><li><p>同一个类的不同对象的对象锁互不干扰</p></li><li><p>类锁由于也是一种特殊的对象锁,因此表现和上述1,2,3,4一致,而由于一个类只有一把对象锁,所以同一个类的不同对象使用类锁将会是同步的</p></li><li><p>类锁和对象锁互不干扰</p></li></ul><hr><h3 id="自旋锁与自适应自旋锁"><a href="#自旋锁与自适应自旋锁" class="headerlink" title="自旋锁与自适应自旋锁"></a>自旋锁与自适应自旋锁</h3><h4 id="自旋锁"><a href="#自旋锁" class="headerlink" title="自旋锁"></a>自旋锁</h4><ul><li>许多情况下,共享数据的锁定状态持续时间较短,切换线程不值得</li><li>通过让线程执行忙循环等待锁的释放,不让出CPU</li><li>缺点: 若锁被其他线程长时间占用,会带来许多性能上的开销</li></ul><h4 id="自适应自旋锁"><a href="#自适应自旋锁" class="headerlink" title="自适应自旋锁"></a>自适应自旋锁</h4><ul><li>自旋的次数不再固定</li><li>由前一次在同一个锁上的自旋时间及锁的拥有者的状态来决定</li></ul><h4 id="锁消除"><a href="#锁消除" class="headerlink" title="锁消除"></a>锁消除</h4><ul><li>JIT编译时,对运行上下文进行扫描,去除不可能存在竞争的锁</li></ul><h4 id="锁粗化"><a href="#锁粗化" class="headerlink" title="锁粗化"></a>锁粗化</h4><ul><li>通过扩大加锁的范围,避免反复加锁和解锁</li></ul><hr><h3 id="synchronized的四种状态"><a href="#synchronized的四种状态" class="headerlink" title="synchronized的四种状态"></a>synchronized的四种状态</h3><ul><li>锁膨胀方向: 无锁 -&gt; 偏向锁 -&gt; 轻量级锁 -&gt; 重量级锁</li></ul><h4 id="偏向锁"><a href="#偏向锁" class="headerlink" title="偏向锁"></a>偏向锁</h4><ul><li>大多数情况下,锁不存在多线程竞争,总是由同一线程多次获得</li><li>缺点: 不适用于锁竞争比较激烈的多线程场合</li></ul><p><strong>核心思想:</strong></p><p>​    如果一个线程获得了锁,那么锁就进入偏向模式,此时 Mark Word 的结构也变为偏向锁结构,当该线程再次请求锁时,无需再做任何同步操作,即获取锁的过程只需要检查 Mark Word 的锁标记位为偏向锁以及当前线程 Id 等于 Mark Word 的 ThreadId 即可,这样就省去了大量有关锁申请的操作</p><h4 id="轻量级锁"><a href="#轻量级锁" class="headerlink" title="轻量级锁"></a>轻量级锁</h4><p>轻量级锁是由偏向锁升级来的,偏向锁运行在一个线程进入同步快的情况下,当第二个线程加入锁争用的时候,偏向锁就会升级为轻量级锁</p><p>适应的场景: 线程交替执行同步快</p><p>若存在同一时间访问同一锁的情况,就会导致轻量级锁膨胀为重量级锁</p><table><thead><tr><th>锁</th><th>优点</th><th>缺点</th><th>使用场景</th></tr></thead><tbody><tr><td>偏向锁</td><td>加锁和解锁不需要CAS操作,没有额外的性能消耗,和执行非同步方法相比仅存在纳秒级的差距</td><td>如果线程间存在锁竞争,会带来额外的锁撤销的消耗</td><td>同一个线程访问同步块或者同步方法的场景</td></tr><tr><td>轻量级锁</td><td>竞争的线程不会阻塞,提高了响应速度</td><td>若线程长时间抢不到锁,自旋会消耗CPU性能</td><td>线程交替执行同步块或者同步方法的场景</td></tr><tr><td>重量级锁</td><td>线程竞争不适用自旋,不会消耗CPU</td><td>线程阻塞,响应时间缓慢,在多线程下,频繁的获取释放锁,会带来巨大的性能消耗</td><td>追求吞吐量,同步块或者同步方法执行时间较长的场景</td></tr></tbody></table><hr><h3 id="volatile和synchronized的区别"><a href="#volatile和synchronized的区别" class="headerlink" title="volatile和synchronized的区别"></a>volatile和synchronized的区别</h3><ul><li>volatile本质是告诉JVM当前变量在寄存器(工作内存)中的值是不确定的,需要从内存中读取;synchronized则是锁定当前变量,只有当前线程可以访问该变量,其他线程被阻塞住直到该线程完成变量操作为止</li><li>volatile仅能使用在变量级别;synchronized则可以使用在变量,方法和类级别</li><li>volatile仅能实现变量的修改可见性,不能保证原子性;而synchronized则可以保证变量修改的可见性和原子性</li><li>volatile不会造成线程的阻塞;synchronized可能会造成线程的阻塞</li><li>volatile标记的变量不会被编译器优化;synchronized标记的变量可以被编译器优化</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;参考:&lt;a href=&quot;https://coding.imooc.com/class/303.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;慕课网&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;synchr
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+      <category term="多线程" scheme="http://yoursite.com/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+      <category term="并发" scheme="http://yoursite.com/tags/%E5%B9%B6%E5%8F%91/"/>
+    
+  </entry>
   
   <entry>
     <title>多线程与并发</title>
@@ -72,9 +104,9 @@
       <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
       <category term="Redis" scheme="http://yoursite.com/tags/Redis/"/>
+    
+      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
@@ -100,9 +132,9 @@
       <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
       <category term="Redis" scheme="http://yoursite.com/tags/Redis/"/>
+    
+      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
@@ -128,9 +160,9 @@
       <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Markdown" scheme="http://yoursite.com/tags/Markdown/"/>
-    
       <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="Markdown" scheme="http://yoursite.com/tags/Markdown/"/>
     
   </entry>
   
