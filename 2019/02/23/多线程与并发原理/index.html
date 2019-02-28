@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Z">
 <meta property="og:description" content="参考:慕课网  synchronized的注意事项线程安全问题的主要诱因 存在共享数据(也称临界资源) 存在多条线程共同操作这些共享数据  解决问题的根本方法: ​    同一时刻有且只有一个线程在操作共享数据,其他线程必须等到该线程处理完数据后再对共享数据进行操作 互斥锁的特性 互斥性: 即在同一时间只允许一个线程持有某个对象锁,通过这种特性来实现多线程的协调机制,这样在同一时间只有一个线程对">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-23T14:53:33.350Z">
+<meta property="og:updated_time" content="2019-02-26T11:32:48.193Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="多线程与并发原理">
 <meta name="twitter:description" content="参考:慕课网  synchronized的注意事项线程安全问题的主要诱因 存在共享数据(也称临界资源) 存在多条线程共同操作这些共享数据  解决问题的根本方法: ​    同一时刻有且只有一个线程在操作共享数据,其他线程必须等到该线程处理完数据后再对共享数据进行操作 互斥锁的特性 互斥性: 即在同一时间只允许一个线程持有某个对象锁,通过这种特性来实现多线程的协调机制,这样在同一时间只有一个线程对">
@@ -489,12 +489,53 @@
 </table>
 <hr>
 <h3 id="volatile和synchronized的区别"><a href="#volatile和synchronized的区别" class="headerlink" title="volatile和synchronized的区别"></a>volatile和synchronized的区别</h3><ul>
-<li>volatile本质是告诉JVM当前变量在寄存器(工作内存)中的值是不确定的,需要从内存中读取;synchronized则是锁定当前变量,只有当前线程可以访问该变量,其他线程被阻塞住直到该线程完成变量操作为止</li>
-<li>volatile仅能使用在变量级别;synchronized则可以使用在变量,方法和类级别</li>
-<li>volatile仅能实现变量的修改可见性,不能保证原子性;而synchronized则可以保证变量修改的可见性和原子性</li>
-<li>volatile不会造成线程的阻塞;synchronized可能会造成线程的阻塞</li>
-<li>volatile标记的变量不会被编译器优化;synchronized标记的变量可以被编译器优化</li>
+<li><p>volatile本质是告诉JVM当前变量在寄存器(工作内存)中的值是不确定的,需要从内存中读取;synchronized则是锁定当前变量,只有当前线程可以访问该变量,其他线程被阻塞住直到该线程完成变量操作为止</p>
+</li>
+<li><p>volatile仅能使用在变量级别;synchronized则可以使用在变量,方法和类级别</p>
+</li>
+<li><p>volatile仅能实现变量的修改可见性,不能保证原子性;而synchronized则可以保证变量修改的可见性和原子性</p>
+</li>
+<li><p>volatile不会造成线程的阻塞;synchronized可能会造成线程的阻塞</p>
+</li>
+<li><p>volatile标记的变量不会被编译器优化;synchronized标记的变量可以被编译器优化</p>
+</li>
 </ul>
+<hr>
+<h3 id="synchronized和ReentrantLook的区别"><a href="#synchronized和ReentrantLook的区别" class="headerlink" title="synchronized和ReentrantLook的区别"></a>synchronized和ReentrantLook的区别</h3><ul>
+<li><p>synchronized是关键字, ReentrantLook是类</p>
+</li>
+<li><p>ReentrantLook 可以对获取锁的等待时间进行设置,避免死锁</p>
+</li>
+<li><p>ReentrantLock 可以获取各种锁的信息</p>
+</li>
+<li><p>ReentrantLock 可以灵活的实现多路通知</p>
+</li>
+<li><p>机制: sync 操作 Mark Word, lock 调用 Unsafe 类的 park() 方法</p>
+</li>
+</ul>
+<hr>
+<h3 id="happens-before-的八大原则"><a href="#happens-before-的八大原则" class="headerlink" title="happens-before 的八大原则"></a>happens-before 的八大原则</h3><ol>
+<li>程序次序原则 : 一个线程内,按照代码顺序,书写在前面的操作先行发生于书写在后面的操作;</li>
+<li>锁定规则 : 一个 unLock 操作先行发生于后面对同一个锁的 lock 操作;</li>
+<li>volatile 变量规则 : 对一个变量的写操作先行发生于后面对这个变量的读操作;</li>
+<li>传递规则 : 如果操作A先行发生于操作B, 而操作B又先行发生于操作C, 则可以得出操作A先行发生于操作C</li>
+<li>线程启动规则 : Thread 对象的 start() 方法先行发生于此线程的每一个动作;</li>
+<li>线程中断规则 : 对线程 interrupt() 方法的调用先行发生于被中断线程的代码检测到中断事件的发生;</li>
+<li>线程终结规则 : 线程中所有的操作都先行发生于线程的终止检测,我们可以通过 Thread.join() 方法结束, Thread.isAlive() 的返回值手段检测到线程已经终止执行;</li>
+<li>对象终结规则 : 一个对象的初始化完成先行发生于它的 finalize() 方法的开始;</li>
+</ol>
+<h3 id="volatile-的作用"><a href="#volatile-的作用" class="headerlink" title="volatile 的作用"></a>volatile 的作用</h3><ul>
+<li>保证被 volatile 修饰的共享变量对所有线程总是可见的</li>
+<li>禁止指令重排序优化</li>
+</ul>
+<h3 id="volatile-和-synchronized-的区别"><a href="#volatile-和-synchronized-的区别" class="headerlink" title="volatile 和 synchronized 的区别"></a>volatile 和 synchronized 的区别</h3><ul>
+<li>volatile 本质是在告诉JVM当前变量在寄存器(工作内存)中的值是不确定的,需要从主存中读取;synchronized则是锁定当前变量,只有当前线程可以访问该变量,其他线程被阻塞住直到该线程完成变量操作为止</li>
+<li>volatile 仅能使用在变量级别; synchronized 则可以使用在变量,方法和类级别</li>
+<li>volatile 仅能实现变量的修改可见性,不能保证原子性;而synchronized则可以保证变量修改的可见性和原子性</li>
+<li>volatile 不会造成线程的阻塞;synchronized可能会造成线程的阻塞</li>
+<li>volatile标记的变量不会被编译器优化;synchronized 标记的变量可以被编译器优化</li>
+</ul>
+<p>未完待续…</p>
 
       
     </div>
@@ -538,6 +579,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/28/HashMap的key存储对象/" rel="prev" title="HashMap的key存储对象">
+                HashMap的key存储对象 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -619,7 +664,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -641,7 +686,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -709,7 +754,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#synchronized的注意事项"><span class="nav-number">1.</span> <span class="nav-text">synchronized的注意事项</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#线程安全问题的主要诱因"><span class="nav-number">1.1.</span> <span class="nav-text">线程安全问题的主要诱因</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#互斥锁的特性"><span class="nav-number">1.2.</span> <span class="nav-text">互斥锁的特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象锁和类锁的总结"><span class="nav-number">1.3.</span> <span class="nav-text">对象锁和类锁的总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自旋锁与自适应自旋锁"><span class="nav-number">2.</span> <span class="nav-text">自旋锁与自适应自旋锁</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#自旋锁"><span class="nav-number">2.1.</span> <span class="nav-text">自旋锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自适应自旋锁"><span class="nav-number">2.2.</span> <span class="nav-text">自适应自旋锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#锁消除"><span class="nav-number">2.3.</span> <span class="nav-text">锁消除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#锁粗化"><span class="nav-number">2.4.</span> <span class="nav-text">锁粗化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#synchronized的四种状态"><span class="nav-number">3.</span> <span class="nav-text">synchronized的四种状态</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#偏向锁"><span class="nav-number">3.1.</span> <span class="nav-text">偏向锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#轻量级锁"><span class="nav-number">3.2.</span> <span class="nav-text">轻量级锁</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#volatile和synchronized的区别"><span class="nav-number">4.</span> <span class="nav-text">volatile和synchronized的区别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#synchronized的注意事项"><span class="nav-number">1.</span> <span class="nav-text">synchronized的注意事项</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#线程安全问题的主要诱因"><span class="nav-number">1.1.</span> <span class="nav-text">线程安全问题的主要诱因</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#互斥锁的特性"><span class="nav-number">1.2.</span> <span class="nav-text">互斥锁的特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象锁和类锁的总结"><span class="nav-number">1.3.</span> <span class="nav-text">对象锁和类锁的总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自旋锁与自适应自旋锁"><span class="nav-number">2.</span> <span class="nav-text">自旋锁与自适应自旋锁</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#自旋锁"><span class="nav-number">2.1.</span> <span class="nav-text">自旋锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自适应自旋锁"><span class="nav-number">2.2.</span> <span class="nav-text">自适应自旋锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#锁消除"><span class="nav-number">2.3.</span> <span class="nav-text">锁消除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#锁粗化"><span class="nav-number">2.4.</span> <span class="nav-text">锁粗化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#synchronized的四种状态"><span class="nav-number">3.</span> <span class="nav-text">synchronized的四种状态</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#偏向锁"><span class="nav-number">3.1.</span> <span class="nav-text">偏向锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#轻量级锁"><span class="nav-number">3.2.</span> <span class="nav-text">轻量级锁</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#volatile和synchronized的区别"><span class="nav-number">4.</span> <span class="nav-text">volatile和synchronized的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#synchronized和ReentrantLook的区别"><span class="nav-number">5.</span> <span class="nav-text">synchronized和ReentrantLook的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#happens-before-的八大原则"><span class="nav-number">6.</span> <span class="nav-text">happens-before 的八大原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#volatile-的作用"><span class="nav-number">7.</span> <span class="nav-text">volatile 的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#volatile-和-synchronized-的区别"><span class="nav-number">8.</span> <span class="nav-text">volatile 和 synchronized 的区别</span></a></li></ol></div>
             
 
           </div>
