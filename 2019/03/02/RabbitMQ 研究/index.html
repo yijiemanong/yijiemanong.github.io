@@ -89,16 +89,16 @@
 <meta property="og:site_name" content="Z">
 <meta property="og:description" content="RabbitMQ 研究介绍 MQ全称为Message Queue，即消息队列， RabbitMQ是由erlang语言开发，基于AMQP（Advanced Message Queue 高级消息队列协议）协议实现的消息队列，它是一种应用程序之间的通信方法，消息队列在分布式系统开发中应用非常广泛。RabbitMQ官方地址：http://www.rabbitmq.com/">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2019/03/02/RabbitMQ%20研究/RabbitMQ工作原理.jpg">
-<meta property="og:image" content="http://yoursite.com/2019/03/02/RabbitMQ%20研究/1.jpg">
-<meta property="og:image" content="http://yoursite.com/2019/03/02/RabbitMQ%20研究/2.jpg">
-<meta property="og:image" content="http://yoursite.com/2019/03/02/RabbitMQ%20研究/3.jpg">
-<meta property="og:image" content="http://yoursite.com/2019/03/02/RabbitMQ%20研究/4.jpg">
-<meta property="og:updated_time" content="2019-03-02T09:42:39.171Z">
+<meta property="og:image" content="http://yoursite.com/2019/03/02/RabbitMQ%20研究/RabbitMQ工作原理.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/02/RabbitMQ%20研究/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/02/RabbitMQ%20研究/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/02/RabbitMQ%20研究/3.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/02/RabbitMQ%20研究/4.png">
+<meta property="og:updated_time" content="2019-03-02T09:46:46.471Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RabbitMQ 研究">
 <meta name="twitter:description" content="RabbitMQ 研究介绍 MQ全称为Message Queue，即消息队列， RabbitMQ是由erlang语言开发，基于AMQP（Advanced Message Queue 高级消息队列协议）协议实现的消息队列，它是一种应用程序之间的通信方法，消息队列在分布式系统开发中应用非常广泛。RabbitMQ官方地址：http://www.rabbitmq.com/">
-<meta name="twitter:image" content="http://yoursite.com/2019/03/02/RabbitMQ%20研究/RabbitMQ工作原理.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/02/RabbitMQ%20研究/RabbitMQ工作原理.png">
 
 
 
@@ -431,7 +431,7 @@
 <p>总结 :</p>
 <p> JMS是java提供的一套消息服务API标准，其目的是为所有的java应用程序提供统一的消息通信的标准，类似java的jdbc，只要遵循jms标准的应用程序之间都可以进行消息通信。它和AMQP有什么 不同，jms是java语言专属的消息服务标准，它是在api层定义标准，并且只能用于java应用；而AMQP是在协议层定义的标准，是跨语言的 。</p>
 <hr>
-<h3 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h3><h4 id="RabbitMQ工作原理"><a href="#RabbitMQ工作原理" class="headerlink" title="RabbitMQ工作原理"></a>RabbitMQ工作原理</h4><p><img src="/2019/03/02/RabbitMQ 研究/RabbitMQ工作原理.jpg" alt="RabbitMQ工作原理"></p>
+<h3 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h3><h4 id="RabbitMQ工作原理"><a href="#RabbitMQ工作原理" class="headerlink" title="RabbitMQ工作原理"></a>RabbitMQ工作原理</h4><p><img src="/2019/03/02/RabbitMQ 研究/RabbitMQ工作原理.png" alt="RabbitMQ工作原理"></p>
 <hr>
 <h3 id="工作模式"><a href="#工作模式" class="headerlink" title="工作模式"></a>工作模式</h3><p>常用工作模式:</p>
 <ol>
@@ -441,26 +441,26 @@
 <li>Topics</li>
 <li>Header</li>
 </ol>
-<h4 id="Work-queues"><a href="#Work-queues" class="headerlink" title="Work queues"></a>Work queues</h4><p><img src="/2019/03/02/RabbitMQ 研究/1.jpg" alt="Work queues"></p>
+<h4 id="Work-queues"><a href="#Work-queues" class="headerlink" title="Work queues"></a>Work queues</h4><p><img src="/2019/03/02/RabbitMQ 研究/1.png" alt="Work queues"></p>
 <p>应用场景: 对于任务过重或任务较多情况使用工作队列模式可以提高任务处理的速度</p>
 <h4 id="Publish-subscribe"><a href="#Publish-subscribe" class="headerlink" title="Publish/subscribe"></a>Publish/subscribe</h4><p>发布订阅模式：</p>
 <ol>
 <li>每个消费者监听自己的队列。</li>
 <li>生产者将消息发给broker，由交换机将消息转发到绑定此交换机的每个队列，每个绑定交换机的队列都将接收<br>到消息。</li>
 </ol>
-<p><img src="/2019/03/02/RabbitMQ 研究/2.jpg" alt="Publish/subscribe"></p>
+<p><img src="/2019/03/02/RabbitMQ 研究/2.png" alt="Publish/subscribe"></p>
 <h4 id="Routing"><a href="#Routing" class="headerlink" title="Routing"></a>Routing</h4><p>路由模式：</p>
 <ol>
 <li>每个消费者监听自己的队列，并且设置routingkey。</li>
 <li>生产者将消息发给交换机，由交换机根据routingkey来转发消息到指定的队列。</li>
 </ol>
-<p><img src="/2019/03/02/RabbitMQ 研究/3.jpg" alt="Routing"></p>
+<p><img src="/2019/03/02/RabbitMQ 研究/3.png" alt="Routing"></p>
 <h4 id="Topics"><a href="#Topics" class="headerlink" title="Topics"></a>Topics</h4><p>与上面路由模式类似,可以使用通配符,规则如下:</p>
 <ol>
 <li>中间以“.”分隔</li>
 <li>符号#可以匹配多个词，符号*可以匹配一个词语</li>
 </ol>
-<p><img src="/2019/03/02/RabbitMQ 研究/4.jpg" alt="Topics"></p>
+<p><img src="/2019/03/02/RabbitMQ 研究/4.png" alt="Topics"></p>
 <h4 id="Header模式"><a href="#Header模式" class="headerlink" title="Header模式"></a>Header模式</h4><p>header模式与routing不同的地方在于，header模式取消routingkey，使用header中的 key/value（键值对）匹配</p>
 <h3 id="Spring整合RabbitMQ"><a href="#Spring整合RabbitMQ" class="headerlink" title="Spring整合RabbitMQ"></a>Spring整合RabbitMQ</h3><ol>
 <li>使用spring-boot-starter-amqp会自动添加spring-rabbit依赖，如下：</li>
