@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Markdown,博客,">
+  <meta name="keywords" content="java,多线程,CountDownLatch,Fork/Join,">
 
 
 
@@ -81,22 +81,18 @@
 
 
 
-<meta name="description" content="初学Markdown,以此文章记录一下Markdown的语法.   What is the Markdown ? Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。Markdown具有一系列衍生版本，用于扩展Markdown的功能（如表格、脚注、内嵌HTML等等），这些功能原初的Markdown尚不具备，它们能让Markdown转">
-<meta name="keywords" content="Markdown,博客">
+<meta name="description" content="通过实现1+2+3+4+…+n的值学习 CountDownLatch 和 Fork/Join 好久没写博客了,通过实现1+2+3+4+…+n的值学习 CountDownLatch 和 Fork/Join 参考: https://blog.csdn.net/zl18310999566/article/details/80258329 参考: https://www.cnblogs.com/cjsbl">
+<meta name="keywords" content="java,多线程,CountDownLatch,Fork&#x2F;Join">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Markdown语法笔记">
-<meta property="og:url" content="http://yoursite.com/2019/01/30/Markdown/index.html">
+<meta property="og:title" content="通过实现1+2+3+4+...+n的值学习 CountDownLatch 和 Fork&#x2F;Join">
+<meta property="og:url" content="http://yoursite.com/2019/03/16/通过实现1+2+3+4+...+n的值学习-CountDownLatch-和-ForkJoin/index.html">
 <meta property="og:site_name" content="Z">
-<meta property="og:description" content="初学Markdown,以此文章记录一下Markdown的语法.   What is the Markdown ? Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。Markdown具有一系列衍生版本，用于扩展Markdown的功能（如表格、脚注、内嵌HTML等等），这些功能原初的Markdown尚不具备，它们能让Markdown转">
+<meta property="og:description" content="通过实现1+2+3+4+…+n的值学习 CountDownLatch 和 Fork/Join 好久没写博客了,通过实现1+2+3+4+…+n的值学习 CountDownLatch 和 Fork/Join 参考: https://blog.csdn.net/zl18310999566/article/details/80258329 参考: https://www.cnblogs.com/cjsbl">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/
-u=702257389,1274025419&fm=27&gp=0.jpg">
-<meta property="og:updated_time" content="2019-02-28T10:45:19.881Z">
+<meta property="og:updated_time" content="2019-03-16T08:11:25.071Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Markdown语法笔记">
-<meta name="twitter:description" content="初学Markdown,以此文章记录一下Markdown的语法.   What is the Markdown ? Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。Markdown具有一系列衍生版本，用于扩展Markdown的功能（如表格、脚注、内嵌HTML等等），这些功能原初的Markdown尚不具备，它们能让Markdown转">
-<meta name="twitter:image" content="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/
-u=702257389,1274025419&fm=27&gp=0.jpg">
+<meta name="twitter:title" content="通过实现1+2+3+4+...+n的值学习 CountDownLatch 和 Fork&#x2F;Join">
+<meta name="twitter:description" content="通过实现1+2+3+4+…+n的值学习 CountDownLatch 和 Fork/Join 好久没写博客了,通过实现1+2+3+4+…+n的值学习 CountDownLatch 和 Fork/Join 参考: https://blog.csdn.net/zl18310999566/article/details/80258329 参考: https://www.cnblogs.com/cjsbl">
 
 
 
@@ -126,13 +122,13 @@ u=702257389,1274025419&fm=27&gp=0.jpg">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/01/30/Markdown/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/16/通过实现1+2+3+4+...+n的值学习-CountDownLatch-和-ForkJoin/">
 
 
 
 
 
-  <title>Markdown语法笔记 | Z</title>
+  <title>通过实现1+2+3+4+...+n的值学习 CountDownLatch 和 Fork/Join | Z</title>
   
 
 
@@ -301,7 +297,7 @@ u=702257389,1274025419&fm=27&gp=0.jpg">
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/30/Markdown/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/16/通过实现1+2+3+4+...+n的值学习-CountDownLatch-和-ForkJoin/">
     
 
 
@@ -320,7 +316,7 @@ u=702257389,1274025419&fm=27&gp=0.jpg">
 
         
         
-          <h1 class="post-title" itemprop="name headline">Markdown语法笔记</h1>
+          <h1 class="post-title" itemprop="name headline">通过实现1+2+3+4+...+n的值学习 CountDownLatch 和 Fork/Join</h1>
         
 
         <div class="post-meta">
@@ -332,8 +328,8 @@ u=702257389,1274025419&fm=27&gp=0.jpg">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-30T16:16:58+08:00">
-                2019-01-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-16T16:09:17+08:00">
+                2019-03-16
               </time>
             
 
@@ -373,8 +369,8 @@ u=702257389,1274025419&fm=27&gp=0.jpg">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/30/Markdown/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/30/Markdown/" itemprop="commentCount"></span>
+                <a href="/2019/03/16/通过实现1+2+3+4+...+n的值学习-CountDownLatch-和-ForkJoin/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/16/通过实现1+2+3+4+...+n的值学习-CountDownLatch-和-ForkJoin/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -402,156 +398,18 @@ u=702257389,1274025419&fm=27&gp=0.jpg">
       
 
       
-        <blockquote>
-<p>初学Markdown,以此文章记录一下Markdown的语法. </p>
+        <h2 id="通过实现1-2-3-4-…-n的值学习-CountDownLatch-和-Fork-Join"><a href="#通过实现1-2-3-4-…-n的值学习-CountDownLatch-和-Fork-Join" class="headerlink" title="通过实现1+2+3+4+…+n的值学习 CountDownLatch 和 Fork/Join"></a>通过实现1+2+3+4+…+n的值学习 CountDownLatch 和 Fork/Join</h2><blockquote>
+<p>好久没写博客了,通过实现1+2+3+4+…+n的值学习 CountDownLatch 和 Fork/Join</p>
+<p>参考: <a href="https://blog.csdn.net/zl18310999566/article/details/80258329" target="_blank" rel="noopener">https://blog.csdn.net/zl18310999566/article/details/80258329</a></p>
+<p>参考: <a href="https://www.cnblogs.com/cjsblog/p/9078341.html" target="_blank" rel="noopener">https://www.cnblogs.com/cjsblog/p/9078341.html</a></p>
 </blockquote>
-<h3 id="What-is-the-Markdown"><a href="#What-is-the-Markdown" class="headerlink" title="What is the Markdown ?"></a>What is the Markdown ?</h3><blockquote>
-<p>Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。Markdown具有一系列衍生版本，用于扩展Markdown的功能（如表格、脚注、内嵌HTML等等），这些功能原初的Markdown尚不具备，它们能让Markdown转换成更多的格式，例如<a href="https://baike.baidu.com/item/LaTeX" target="_blank" rel="noopener">LaTeX</a>，<a href="https://baike.baidu.com/item/Docbook" target="_blank" rel="noopener">Docbook</a>。Markdown增强版中比较有名的有Markdown Extra、MultiMarkdown、 Maruku等。这些衍生版本要么基于工具，如<a href="https://baike.baidu.com/item/Pandoc" target="_blank" rel="noopener">Pandoc</a>；要么基于网站，如<a href="https://baike.baidu.com/item/GitHub" target="_blank" rel="noopener">GitHub</a>和<a href="https://baike.baidu.com/item/Wikipedia" target="_blank" rel="noopener">Wikipedia</a>，在语法上基本兼容，但在一些语法和渲染效果上有改动。<br>&lt;摘自百度百科&gt;</p>
-</blockquote>
+<h3 id="简单实现方式如下"><a href="#简单实现方式如下" class="headerlink" title="简单实现方式如下:"></a>简单实现方式如下:</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = (n+<span class="number">1</span>) * n / <span class="number">2</span>;</span><br><span class="line">System.out.println(i);</span><br></pre></td></tr></table></figure>
+<p>ok,上面是简单方式,我们暂且不提,下面来说一下递归来实现以上功能.</p>
 <a id="more"></a>
-<h3 id="Markdowm语法"><a href="#Markdowm语法" class="headerlink" title="Markdowm语法"></a>Markdowm语法</h3><h4 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a>一、标题</h4><p>Markdown的标题是由 #开头 + 空格 + 标题组成(如上面的标题),一级标题用# ,二级标题用## ,以此类推,共六级标题.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">​``` [注意: #后面一定要加 空格 ]</span><br><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br><span class="line">​``` [注意: #后面一定要加 空格]</span><br></pre></td></tr></table></figure>
-<p>效果如下:</p>
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><hr>
-<h4 id="二、字体"><a href="#二、字体" class="headerlink" title="二、字体"></a>二、字体</h4><ul>
-<li><p><strong>加粗</strong></p>
-<p>在需要加粗的文字左右用<code>两个</code>*包裹起来</p>
-</li>
-<li><p><em>斜体</em></p>
-<p>在需要倾斜的文字左右用<code>一个</code> * 包裹起来</p>
-</li>
-<li><p><strong><em>斜体加粗</em></strong></p>
-<p>在需要倾斜和加粗的文字左右用<code>三个</code> * 包裹起来</p>
-</li>
-<li><p><del>删除线</del></p>
-<p>在需要加删除线的文字左右用<code>两个</code> ~~ 包裹起来</p>
-<p>例子:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">**加粗**</span><br><span class="line">*斜体*</span><br><span class="line">***斜体加粗***</span><br><span class="line">~~删除线~~</span><br></pre></td></tr></table></figure>
-<p>效果:</p>
-<p><strong>加粗</strong></p>
-<p><em>斜体</em></p>
-<p><strong><em>斜体加粗</em></strong></p>
-<p><del>删除线</del></p>
-<hr>
-</li>
-</ul>
-<h4 id="三、引用"><a href="#三、引用" class="headerlink" title="三、引用"></a>三、引用</h4><p>语法: 在引用的文字前加&gt;,引用可以嵌套,如: 两个&gt;&gt; 三个&gt;&gt;&gt;,效果一样</p>
-<p>实例:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;引用1</span><br><span class="line">&gt;&gt; 引用2</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; 引用n</span><br></pre></td></tr></table></figure>
-<p>效果:</p>
-<blockquote>
-<p>引用1</p>
-<blockquote>
-<p>引用2</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>引用n</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<hr>
-<h4 id="四、分割线"><a href="#四、分割线" class="headerlink" title="四、分割线"></a>四、分割线</h4><p>使用三个或者三个以上的 - 或者 * 都可以</p>
-<p>实例:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">----</span><br><span class="line">***</span><br><span class="line">******</span><br></pre></td></tr></table></figure>
-<p>效果:</p>
-<hr>
-<hr>
-<hr>
-<hr>
-<h4 id="五、图片"><a href="#五、图片" class="headerlink" title="五、图片"></a>五、图片</h4><p>语法:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">![图片alt](图片地址 &quot;图片title&quot;)</span><br><span class="line">图片alt: 显示在图片下方的文字,大多用于对图片的解释</span><br><span class="line">图片title: 图片的标题,当鼠标移动到图片上时显示的内容,title可有可无</span><br></pre></td></tr></table></figure>
-<p>实例:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![blockchain](https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/</span><br><span class="line">u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg &quot;区块链&quot;)</span><br></pre></td></tr></table></figure>
-<p>效果如下:</p>
-<p><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/
-u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg" alt="blockchain" title="区块链"></p>
-<hr>
-<h4 id="六、超链接"><a href="#六、超链接" class="headerlink" title="六、超链接"></a>六、超链接</h4><p>语法:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[超链接名(超链接地址 &quot;超链接title&quot;)]</span><br><span class="line">title可有可无</span><br></pre></td></tr></table></figure>
-<p>示例:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[百度](http://baidu.com)</span><br><span class="line">[QQ](http://qq.com)</span><br></pre></td></tr></table></figure>
-<p>效果:</p>
-<p><a href="http://baidu.com" target="_blank" rel="noopener">百度</a></p>
-<p><a href="http://qq.com" target="_blank" rel="noopener">QQ</a></p>
-<hr>
-<h4 id="七、列表"><a href="#七、列表" class="headerlink" title="七、列表"></a>七、列表</h4><ul>
-<li><p>无序列表</p>
-<p>语法: 无序列表用 - + * 中任何一种都可以</p>
-<p>实例:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- 列表</span><br><span class="line">+ 列表</span><br><span class="line">* 列表</span><br><span class="line">注意: - + * 后面必须有空格</span><br></pre></td></tr></table></figure>
-<p>效果:</p>
-<ul>
-<li><p>列表</p>
-</li>
-<li><p>列表</p>
-</li>
-<li><p>列表</p>
-</li>
-</ul>
-</li>
-<li><p>有序列表</p>
-<p>语法: 数字加.</p>
-<p>示例:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.列表</span><br><span class="line">2.列表</span><br><span class="line">3.列表</span><br></pre></td></tr></table></figure>
-<p>效果:</p>
-<p>1.列表</p>
-<p>2.列表</p>
-<p>3.列表</p>
-</li>
-<li><p>列表嵌套</p>
-<p>上一级和下一级之间有三个空格</p>
-</li>
-</ul>
-<ul>
-<li><p>一级无序列表</p>
-<ul>
-<li><p>二级无序列表</p>
-</li>
-<li><p>二级无序列表</p>
-</li>
-<li><p>二级无序列表</p>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h4 id="八、-表格"><a href="#八、-表格" class="headerlink" title="八、 表格"></a>八、 表格</h4><p>  语法:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">表头|表头|表头</span><br><span class="line">---|:--:|---:</span><br><span class="line">内容|内容|内容</span><br><span class="line">内容|内容|内容</span><br><span class="line"></span><br><span class="line">第二行分隔表头和内容</span><br><span class="line">- 有一个就行,为了对齐,多加了几个</span><br><span class="line">文字默认居左</span><br><span class="line">- 两边加: 表示文字居中</span><br><span class="line">- 右边加: 表示文字居右</span><br><span class="line">注意: 原生的语法两边都要用 | 包起来</span><br></pre></td></tr></table></figure>
-<p>  实例:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">姓名(默认居左)|技能(设置为居中)|排行(设置为居右)</span><br><span class="line">--|:--:|--:</span><br><span class="line">刘备|哭|大哥</span><br><span class="line">关羽|打|二哥</span><br><span class="line">张飞|骂|三弟</span><br></pre></td></tr></table></figure>
-<p>效果如下:</p>
-<table>
-<thead>
-<tr>
-<th>姓名(默认居左)</th>
-<th style="text-align:center">技能(设置为居中)</th>
-<th style="text-align:right">排行(设置为居右)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>刘备</td>
-<td style="text-align:center">哭</td>
-<td style="text-align:right">大哥</td>
-</tr>
-<tr>
-<td>关羽</td>
-<td style="text-align:center">打</td>
-<td style="text-align:right">二哥</td>
-</tr>
-<tr>
-<td>张飞</td>
-<td style="text-align:center">骂</td>
-<td style="text-align:right">三弟</td>
-</tr>
-</tbody>
-</table>
-<p>博客参考: <a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">https://www.jianshu.com/p/191d1e21f7ed</a></p>
+<h3 id="递归实现方式如下"><a href="#递归实现方式如下" class="headerlink" title="递归实现方式如下:"></a>递归实现方式如下:</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = n;</span><br><span class="line">        <span class="comment">// 递归终止条件，借助&amp;&amp;的短路，对于 A &amp;&amp; B</span></span><br><span class="line">        <span class="comment">// A=true，执行B</span></span><br><span class="line">        <span class="comment">// A=false，不执行B</span></span><br><span class="line">        <span class="comment">// 所以如果 n=0 时，则不会再进行递归调用</span></span><br><span class="line">        <span class="keyword">boolean</span> isContinue = (n &gt; <span class="number">0</span>) &amp;&amp; (sum += sum(--n)) &gt; <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="多线程的实现方式"><a href="#多线程的实现方式" class="headerlink" title="多线程的实现方式"></a>多线程的实现方式</h3><h4 id="CountDownLatch-实现方式如下"><a href="#CountDownLatch-实现方式如下" class="headerlink" title="CountDownLatch 实现方式如下:"></a>CountDownLatch 实现方式如下:</h4> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CountDownLatchTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">        System.out.println(getSum(<span class="number">1000</span>,<span class="number">3</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Result</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a)</span></span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.sum += a;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getSum</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.sum;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getSum</span><span class="params">(<span class="keyword">int</span> end, <span class="keyword">int</span> threadCount)</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(end &lt;= threadCount)&#123;</span><br><span class="line">            threadCount = end;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Result result = <span class="keyword">new</span> Result();</span><br><span class="line">        CountDownLatch cdl = <span class="keyword">new</span> CountDownLatch(threadCount);</span><br><span class="line"></span><br><span class="line">        List&lt;MyThread&gt; threadList = <span class="keyword">new</span> ArrayList&lt;&gt;(threadCount);</span><br><span class="line">        <span class="comment">// new 线程</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; threadCount;i++)&#123;</span><br><span class="line">            threadList.add(<span class="keyword">new</span> MyThread(result, cdl));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 给线程分配任务</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; end;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> index = (i + <span class="number">1</span>) % threadCount;</span><br><span class="line">            threadList.get(index).addNum(i + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 启动线程</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; threadCount;i++)&#123;</span><br><span class="line">            threadList.get(i).start();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        cdl.await();</span><br><span class="line">        <span class="keyword">return</span> result.getSum();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">MyThread</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> List&lt;Integer&gt; numList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">private</span> Result result;</span><br><span class="line">        <span class="keyword">private</span> CountDownLatch cdl;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">MyThread</span><span class="params">(Result result, CountDownLatch cdl)</span></span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.result = result;</span><br><span class="line">            <span class="keyword">this</span>.cdl = cdl;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addNum</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">            numList.add(i);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (Integer i : numList) &#123;</span><br><span class="line">                sum += i;</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(numList);</span><br><span class="line">            result.add(sum);</span><br><span class="line">            cdl.countDown();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Fork-Join-实现方式"><a href="#Fork-Join-实现方式" class="headerlink" title="Fork/Join 实现方式:"></a>Fork/Join 实现方式:</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ForkJoinTaskDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">SumTask</span> <span class="keyword">extends</span> <span class="title">RecursiveTask</span>&lt;<span class="title">Integer</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> THRESHOLD = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> arr[];</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> start;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> end;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">SumTask</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> start, <span class="keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.arr = arr;</span><br><span class="line">            <span class="keyword">this</span>.start = start;</span><br><span class="line">            <span class="keyword">this</span>.end = end;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 小计</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="function"><span class="keyword">private</span> Integer <span class="title">subtotal</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            Integer sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = start; i &lt; end; i++) &#123;</span><br><span class="line">                sum += arr[i];</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + <span class="string">": ∑("</span> + start + <span class="string">"~"</span> + end + <span class="string">")="</span> + sum);</span><br><span class="line">            <span class="keyword">return</span> sum;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">protected</span> Integer <span class="title">compute</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> ((end - start) &lt;= THRESHOLD) &#123;</span><br><span class="line">                <span class="keyword">return</span> subtotal();</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">int</span> middle = (start + end) / <span class="number">2</span>;</span><br><span class="line">                SumTask left = <span class="keyword">new</span> SumTask(arr, start, middle);</span><br><span class="line">                SumTask right = <span class="keyword">new</span> SumTask(arr, middle, end);</span><br><span class="line">                left.fork();</span><br><span class="line">                right.fork();</span><br><span class="line"></span><br><span class="line">                <span class="keyword">return</span> left.join() + right.join();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ExecutionException, InterruptedException </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">100</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">            arr[i] = i + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        ForkJoinPool pool = <span class="keyword">new</span> ForkJoinPool();</span><br><span class="line">        ForkJoinTask&lt;Integer&gt; result = pool.submit(<span class="keyword">new</span> ForkJoinTaskDemo().new SumTask(arr, <span class="number">0</span>, arr.length));</span><br><span class="line">        System.out.println(<span class="string">"最终计算结果: "</span> + result.invoke());</span><br><span class="line">        pool.shutdown();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此方案具体讲解请参考文章最上方博客,写的很好,极力推荐.</p>
 
       
     </div>
@@ -569,9 +427,13 @@ u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg" alt="blockchain" title="区块链
       
         <div class="post-tags">
           
-            <a href="/tags/Markdown/" rel="tag"># Markdown</a>
+            <a href="/tags/java/" rel="tag"># java</a>
           
-            <a href="/tags/博客/" rel="tag"># 博客</a>
+            <a href="/tags/多线程/" rel="tag"># 多线程</a>
+          
+            <a href="/tags/CountDownLatch/" rel="tag"># CountDownLatch</a>
+          
+            <a href="/tags/Fork-Join/" rel="tag"># Fork/Join</a>
           
         </div>
       
@@ -584,15 +446,15 @@ u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg" alt="blockchain" title="区块链
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/03/02/RabbitMQ 研究/" rel="next" title="RabbitMQ 研究">
+                <i class="fa fa-chevron-left"></i> RabbitMQ 研究
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/11/Redis数据结构/" rel="prev" title="Redis数据结构">
-                Redis数据结构 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -764,7 +626,7 @@ u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg" alt="blockchain" title="区块链
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-the-Markdown"><span class="nav-number">1.</span> <span class="nav-text">What is the Markdown ?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Markdowm语法"><span class="nav-number">2.</span> <span class="nav-text">Markdowm语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、标题"><span class="nav-number">2.1.</span> <span class="nav-text">一、标题</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#一级标题"><span class="nav-number"></span> <span class="nav-text">一级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#二级标题"><span class="nav-number"></span> <span class="nav-text">二级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三级标题"><span class="nav-number">1.</span> <span class="nav-text">三级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#四级标题"><span class="nav-number">1.1.</span> <span class="nav-text">四级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#五级标题"><span class="nav-number">1.1.1.</span> <span class="nav-text">五级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#六级标题"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">六级标题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、字体"><span class="nav-number">1.2.</span> <span class="nav-text">二、字体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、引用"><span class="nav-number">1.3.</span> <span class="nav-text">三、引用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、分割线"><span class="nav-number">1.4.</span> <span class="nav-text">四、分割线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#五、图片"><span class="nav-number">1.5.</span> <span class="nav-text">五、图片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#六、超链接"><span class="nav-number">1.6.</span> <span class="nav-text">六、超链接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#七、列表"><span class="nav-number">1.7.</span> <span class="nav-text">七、列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#八、-表格"><span class="nav-number">1.8.</span> <span class="nav-text">八、 表格</span></a></li></ol></li></ol></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#通过实现1-2-3-4-…-n的值学习-CountDownLatch-和-Fork-Join"><span class="nav-number">1.</span> <span class="nav-text">通过实现1+2+3+4+…+n的值学习 CountDownLatch 和 Fork/Join</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单实现方式如下"><span class="nav-number">1.1.</span> <span class="nav-text">简单实现方式如下:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#递归实现方式如下"><span class="nav-number">1.2.</span> <span class="nav-text">递归实现方式如下:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多线程的实现方式"><span class="nav-number">1.3.</span> <span class="nav-text">多线程的实现方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CountDownLatch-实现方式如下"><span class="nav-number">1.3.1.</span> <span class="nav-text">CountDownLatch 实现方式如下:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fork-Join-实现方式"><span class="nav-number">1.3.2.</span> <span class="nav-text">Fork/Join 实现方式:</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
