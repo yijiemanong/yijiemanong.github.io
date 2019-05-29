@@ -84,14 +84,14 @@
 <meta name="description" content="An incompatible version [1.2.12] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]通过实现1+2+3+4+…+n的值学习 CountDownLatch 和 Fork/Join 参考: https://blog.csdn.">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="An incompatible version [1.2.12] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]">
+<meta property="og:title" content="tomcat版本错误和mysql设置ONLY_FULL_GROUP_BY">
 <meta property="og:url" content="http://yoursite.com/2019/05/29/1/index.html">
 <meta property="og:site_name" content="Z">
 <meta property="og:description" content="An incompatible version [1.2.12] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]通过实现1+2+3+4+…+n的值学习 CountDownLatch 和 Fork/Join 参考: https://blog.csdn.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-29T11:03:28.676Z">
+<meta property="og:updated_time" content="2019-05-29T11:58:17.693Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="An incompatible version [1.2.12] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]">
+<meta name="twitter:title" content="tomcat版本错误和mysql设置ONLY_FULL_GROUP_BY">
 <meta name="twitter:description" content="An incompatible version [1.2.12] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]通过实现1+2+3+4+…+n的值学习 CountDownLatch 和 Fork/Join 参考: https://blog.csdn.">
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <title>An incompatible version [1.2.12] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14] | Z</title>
+  <title>tomcat版本错误和mysql设置ONLY_FULL_GROUP_BY | Z</title>
   
 
 
@@ -316,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">An incompatible version [1.2.12] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]</h1>
+          <h1 class="post-title" itemprop="name headline">tomcat版本错误和mysql设置ONLY_FULL_GROUP_BY</h1>
         
 
         <div class="post-meta">
@@ -405,6 +405,11 @@
 <a id="more"></a>
 <h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>​    它说安装了基于APR的Apache Tomcat Native库的不兼容版本[1.2.12]，而Tomcat需要版本[1.2.14],马上百度该问题,找到相关博客,下载该文件后放入<code>C:\Windows\System32</code>中即可,下载地址:<a href="http://archive.apache.org/dist/tomcat/tomcat-connectors/native/1.2.14/binaries/" target="_blank" rel="noopener">http://archive.apache.org/dist/tomcat/tomcat-connectors/native/1.2.14/binaries/</a></p>
 <p>下载<code>tomcat-native-1.2.14-win32-bin.zip</code>,打开找到<code>bin</code>下<code>x64</code>下<code>tcnative-1.dll</code>放入到<code>C:\Windows\System32</code>中即可,ok,解决问题!</p>
+<p>​    第一个tomcat版本问题已解决,运行项目,继续报错,报错如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by</span><br></pre></td></tr></table></figure>
+<p>​    经百度看到这是mysql默认设置了only_full_group_by,在my.ini文件中加入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#设置sql_mode  很重要 否则初始化好了以后进行查询操作会出现only_full_group_by异常 如果在初始化#的时候没有设置 则需要重新进行初始化</span><br><span class="line">sql_mode=&apos;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&apos;</span><br></pre></td></tr></table></figure>
+<p>​    解决!</p>
 
       
     </div>
