@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-05-01T08:23:06.884Z</updated>
+  <updated>2019-05-29T11:03:28.676Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>An incompatible version [1.2.12] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]</title>
+    <link href="http://yoursite.com/2019/05/29/1/"/>
+    <id>http://yoursite.com/2019/05/29/1/</id>
+    <published>2019-05-29T10:54:31.000Z</published>
+    <updated>2019-05-29T11:03:28.676Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="An-incompatible-version-1-2-12-of-the-APR-based-Apache-Tomcat-Native-library-is-installed-while-Tomcat-requires-version-1-2-14-通过实现1-2-3-4-…-n的值学习-CountDownLatch-和-Fork-Join"><a href="#An-incompatible-version-1-2-12-of-the-APR-based-Apache-Tomcat-Native-library-is-installed-while-Tomcat-requires-version-1-2-14-通过实现1-2-3-4-…-n的值学习-CountDownLatch-和-Fork-Join" class="headerlink" title="An incompatible version [1.2.12] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]通过实现1+2+3+4+…+n的值学习 CountDownLatch 和 Fork/Join"></a>An incompatible version [1.2.12] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]通过实现1+2+3+4+…+n的值学习 CountDownLatch 和 Fork/Join</h2><blockquote><p>参考: <a href="https://blog.csdn.net/zhoukikoo/article/details/80532483" target="_blank" rel="noopener">https://blog.csdn.net/zhoukikoo/article/details/80532483</a></p></blockquote><h3 id="简单实现方式如下"><a href="#简单实现方式如下" class="headerlink" title="简单实现方式如下:"></a>简单实现方式如下:</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 今天遇到一个错误</span></span><br><span class="line"><span class="number">2019</span>-<span class="number">05</span>-<span class="number">29</span> <span class="number">18</span>:<span class="number">22</span>:<span class="number">16</span> | ERROR | main | org.apache.catalina.core.AprLifecycleListener | An incompatible version [<span class="number">1.2</span>.12] of the APR based Apache Tomcat Native library is installed, <span class="keyword">while</span> Tomcat <span class="keyword">requires</span> version [<span class="number">1.2</span>.14]</span><br></pre></td></tr></table></figure><a id="more"></a><h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>​    它说安装了基于APR的Apache Tomcat Native库的不兼容版本[1.2.12]，而Tomcat需要版本[1.2.14],马上百度该问题,找到相关博客,下载该文件后放入<code>C:\Windows\System32</code>中即可,下载地址:<a href="http://archive.apache.org/dist/tomcat/tomcat-connectors/native/1.2.14/binaries/" target="_blank" rel="noopener">http://archive.apache.org/dist/tomcat/tomcat-connectors/native/1.2.14/binaries/</a></p><p>下载<code>tomcat-native-1.2.14-win32-bin.zip</code>,打开找到<code>bin</code>下<code>x64</code>下<code>tcnative-1.dll</code>放入到<code>C:\Windows\System32</code>中即可,ok,解决问题!</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;An-incompatible-version-1-2-12-of-the-APR-based-Apache-Tomcat-Native-library-is-installed-while-Tomcat-requires-version-1-2-14-通过实现1-2-3-4-…-n的值学习-CountDownLatch-和-Fork-Join&quot;&gt;&lt;a href=&quot;#An-incompatible-version-1-2-12-of-the-APR-based-Apache-Tomcat-Native-library-is-installed-while-Tomcat-requires-version-1-2-14-通过实现1-2-3-4-…-n的值学习-CountDownLatch-和-Fork-Join&quot; class=&quot;headerlink&quot; title=&quot;An incompatible version [1.2.12] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]通过实现1+2+3+4+…+n的值学习 CountDownLatch 和 Fork/Join&quot;&gt;&lt;/a&gt;An incompatible version [1.2.12] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]通过实现1+2+3+4+…+n的值学习 CountDownLatch 和 Fork/Join&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;参考: &lt;a href=&quot;https://blog.csdn.net/zhoukikoo/article/details/80532483&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://blog.csdn.net/zhoukikoo/article/details/80532483&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;简单实现方式如下&quot;&gt;&lt;a href=&quot;#简单实现方式如下&quot; class=&quot;headerlink&quot; title=&quot;简单实现方式如下:&quot;&gt;&lt;/a&gt;简单实现方式如下:&lt;/h3&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 今天遇到一个错误&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;2019&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;05&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;29&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;18&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;22&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;16&lt;/span&gt; | ERROR | main | org.apache.catalina.core.AprLifecycleListener | An incompatible version [&lt;span class=&quot;number&quot;&gt;1.2&lt;/span&gt;.12] of the APR based Apache Tomcat Native library is installed, &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; Tomcat &lt;span class=&quot;keyword&quot;&gt;requires&lt;/span&gt; version [&lt;span class=&quot;number&quot;&gt;1.2&lt;/span&gt;.14]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>基于数组/链表实现LRU缓存</title>
