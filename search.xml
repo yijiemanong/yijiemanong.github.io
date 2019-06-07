@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[springboot + mybatisPlus 多数据源]]></title>
-    <url>%2F2019%2F06%2F05%2Fspringboot%20%2B%20mybatis%20%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90%2F</url>
-    <content type="text"><![CDATA[springboot + mybatisPlus 多数据源 参考: https://gitee.com/y_project/RuoYi 简单的把若依项目里面多数据源抽离出来,地址:https://gitee.com/yijiemanong6/springboot-mybatisPlus]]></content>
+    <title><![CDATA[springboot + mybatisPlus3 多数据源 + 代码生成器]]></title>
+    <url>%2F2019%2F06%2F05%2Fspringboot%20%2B%20mybatisPlus%20%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90%2F</url>
+    <content type="text"><![CDATA[springboot + mybatisPlus3 多数据源 + 代码生成器 参考: https://gitee.com/y_project/RuoYi 简单的把若依项目里面多数据源抽离出来,然后集成了mybatisPlus3地址:https://gitee.com/yijiemanong6/springboot-mybatisPlus]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>

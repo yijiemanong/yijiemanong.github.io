@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-06-07T04:37:52.612Z</updated>
+  <updated>2019-06-07T05:15:04.598Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,19 +17,19 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>springboot + mybatisPlus 多数据源</title>
-    <link href="http://yoursite.com/2019/06/05/springboot%20+%20mybatis%20%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90/"/>
-    <id>http://yoursite.com/2019/06/05/springboot + mybatis 多数据源/</id>
+    <title>springboot + mybatisPlus3 多数据源 + 代码生成器</title>
+    <link href="http://yoursite.com/2019/06/05/springboot%20+%20mybatisPlus%20%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90/"/>
+    <id>http://yoursite.com/2019/06/05/springboot + mybatisPlus 多数据源/</id>
     <published>2019-06-05T12:42:04.000Z</published>
-    <updated>2019-06-07T04:37:52.612Z</updated>
+    <updated>2019-06-07T05:15:04.598Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="springboot-mybatisPlus-多数据源"><a href="#springboot-mybatisPlus-多数据源" class="headerlink" title="springboot + mybatisPlus 多数据源"></a>springboot + mybatisPlus 多数据源</h2><blockquote><p>参考: <a href="https://gitee.com/y_project/RuoYi" target="_blank" rel="noopener">https://gitee.com/y_project/RuoYi</a></p></blockquote><p>简单的把若依项目里面多数据源抽离出来,地址:<a href="https://gitee.com/yijiemanong6/springboot-mybatisPlus" target="_blank" rel="noopener">https://gitee.com/yijiemanong6/springboot-mybatisPlus</a></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="springboot-mybatisPlus3-多数据源-代码生成器"><a href="#springboot-mybatisPlus3-多数据源-代码生成器" class="headerlink" title="springboot + mybatisPlus3 多数据源 + 代码生成器"></a>springboot + mybatisPlus3 多数据源 + 代码生成器</h2><blockquote><p>参考: <a href="https://gitee.com/y_project/RuoYi" target="_blank" rel="noopener">https://gitee.com/y_project/RuoYi</a></p></blockquote><p>简单的把若依项目里面多数据源抽离出来,然后集成了mybatisPlus3<br>地址:<a href="https://gitee.com/yijiemanong6/springboot-mybatisPlus" target="_blank" rel="noopener">https://gitee.com/yijiemanong6/springboot-mybatisPlus</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;springboot-mybatisPlus-多数据源&quot;&gt;&lt;a href=&quot;#springboot-mybatisPlus-多数据源&quot; class=&quot;headerlink&quot; title=&quot;springboot + mybatisPlus 多数据源&quot;&gt;&lt;/a&gt;spr
+        &lt;h2 id=&quot;springboot-mybatisPlus3-多数据源-代码生成器&quot;&gt;&lt;a href=&quot;#springboot-mybatisPlus3-多数据源-代码生成器&quot; class=&quot;headerlink&quot; title=&quot;springboot + mybatisPlus
       
     
     </summary>
