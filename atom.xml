@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-06-07T05:15:04.598Z</updated>
+  <updated>2019-07-07T09:55:59.201Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>springcloud爬坑之路之eureka</title>
+    <link href="http://yoursite.com/2019/07/07/springcloud%E7%88%AC%E5%9D%91%E4%B9%8B%E8%B7%AF%E4%B9%8Beureka/"/>
+    <id>http://yoursite.com/2019/07/07/springcloud爬坑之路之eureka/</id>
+    <published>2019-07-07T08:09:17.000Z</published>
+    <updated>2019-07-07T09:55:59.201Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="springcloud爬坑之路之eureka"><a href="#springcloud爬坑之路之eureka" class="headerlink" title="springcloud爬坑之路之eureka"></a>springcloud爬坑之路之eureka</h3><ol><li><p>server端启动正常,Client端连接server端时报错:<code>Cannot execute request on any known server,</code></p><p>我看了client端url跟server端url写的一样,然后配置正常</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">register-with-eureka: false</span><br><span class="line">fetch-registry: false</span><br></pre></td></tr></table></figure><a id="more"></a><p>解决办法:  在server端添加以下配置,关闭csrf ()</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@EnableWebSecurity</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WebSecurityConfig</span> <span class="keyword">extends</span> <span class="title">WebSecurityConfigurerAdapter</span> </span>&#123;</span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">configure</span><span class="params">(HttpSecurity http)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">http.csrf().disable();</span><br><span class="line"><span class="keyword">super</span>.configure(http);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;springcloud爬坑之路之eureka&quot;&gt;&lt;a href=&quot;#springcloud爬坑之路之eureka&quot; class=&quot;headerlink&quot; title=&quot;springcloud爬坑之路之eureka&quot;&gt;&lt;/a&gt;springcloud爬坑之路之eureka&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;server端启动正常,Client端连接server端时报错:&lt;code&gt;Cannot execute request on any known server,&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;我看了client端url跟server端url写的一样,然后配置正常&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;register-with-eureka: false&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;fetch-registry: false&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+      <category term="springcloud" scheme="http://yoursite.com/tags/springcloud/"/>
+    
+      <category term="eureka" scheme="http://yoursite.com/tags/eureka/"/>
+    
+  </entry>
   
   <entry>
     <title>springboot + mybatisPlus3 多数据源 + 代码生成器</title>

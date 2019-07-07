@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[springcloud爬坑之路之eureka]]></title>
+    <url>%2F2019%2F07%2F07%2Fspringcloud%E7%88%AC%E5%9D%91%E4%B9%8B%E8%B7%AF%E4%B9%8Beureka%2F</url>
+    <content type="text"><![CDATA[springcloud爬坑之路之eureka server端启动正常,Client端连接server端时报错:Cannot execute request on any known server, 我看了client端url跟server端url写的一样,然后配置正常 12register-with-eureka: falsefetch-registry: false 解决办法: 在server端添加以下配置,关闭csrf () 12345678@EnableWebSecuritypublic class WebSecurityConfig extends WebSecurityConfigurerAdapter &#123; @Override protected void configure(HttpSecurity http) throws Exception &#123; http.csrf().disable(); super.configure(http); &#125;&#125;]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>springcloud</tag>
+        <tag>eureka</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[springboot + mybatisPlus3 多数据源 + 代码生成器]]></title>
     <url>%2F2019%2F06%2F05%2Fspringboot%20%2B%20mybatisPlus%20%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90%2F</url>
     <content type="text"><![CDATA[springboot + mybatisPlus3 多数据源 + 代码生成器 参考: https://gitee.com/y_project/RuoYi 简单的把若依项目里面多数据源抽离出来,然后集成了mybatisPlus3地址:https://gitee.com/yijiemanong6/springboot-mybatisPlus]]></content>
