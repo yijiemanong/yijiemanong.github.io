@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="java,R,">
 
 
 
@@ -81,16 +81,18 @@
 
 
 
-<meta name="description" content="一只小码农的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Z">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta name="description" content="参考: https://www.cnblogs.com/guo-xiang/p/7857349.html    https://blog.csdn.net/qq_34491508/article/details/80049225  今天领导安排研究一下java程序中调用R脚本,一听当时就蒙了,这是什么骚操作,回家研究了一下,其实还挺简单的,在这里感谢一下伟大的程序员前辈们无私奉献的精神!">
+<meta name="keywords" content="java,R">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java程序调用R脚本">
+<meta property="og:url" content="http://yoursite.com/2019/07/10/Java程序调用R脚本/index.html">
 <meta property="og:site_name" content="Z">
-<meta property="og:description" content="一只小码农的个人博客">
+<meta property="og:description" content="参考: https://www.cnblogs.com/guo-xiang/p/7857349.html    https://blog.csdn.net/qq_34491508/article/details/80049225  今天领导安排研究一下java程序中调用R脚本,一听当时就蒙了,这是什么骚操作,回家研究了一下,其实还挺简单的,在这里感谢一下伟大的程序员前辈们无私奉献的精神!">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-10T13:04:13.563Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Z">
-<meta name="twitter:description" content="一只小码农的个人博客">
+<meta name="twitter:title" content="Java程序调用R脚本">
+<meta name="twitter:description" content="参考: https://www.cnblogs.com/guo-xiang/p/7857349.html    https://blog.csdn.net/qq_34491508/article/details/80049225  今天领导安排研究一下java程序中调用R脚本,一听当时就蒙了,这是什么骚操作,回家研究了一下,其实还挺简单的,在这里感谢一下伟大的程序员前辈们无私奉献的精神!">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/page/2/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/10/Java程序调用R脚本/">
 
 
 
 
 
-  <title>Z</title>
+  <title>Java程序调用R脚本 | Z</title>
   
 
 
@@ -145,8 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -281,9 +282,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -296,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/19/Redis扩展/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/10/Java程序调用R脚本/">
     
 
 
@@ -315,9 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/19/Redis扩展/" itemprop="url">Redis扩展</a></h1>
+          <h1 class="post-title" itemprop="name headline">Java程序调用R脚本</h1>
         
 
         <div class="post-meta">
@@ -329,8 +328,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-19T22:54:20+08:00">
-                2019-02-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-10T16:09:17+08:00">
+                2019-07-10
               </time>
             
 
@@ -370,8 +369,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/02/19/Redis扩展/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/19/Redis扩展/" itemprop="commentCount"></span>
+                <a href="/2019/07/10/Java程序调用R脚本/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/10/Java程序调用R脚本/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -399,23 +398,35 @@
       
 
       
-        
-          <blockquote>
-<p>参考:<a href="https://juejin.im/book/5afc2e5f6fb9a07a9b362527" target="_blank" rel="noopener">掘金</a></p>
+        <p>参考:</p>
+<p><a href="https://www.cnblogs.com/guo-xiang/p/7857349.html" target="_blank" rel="noopener">https://www.cnblogs.com/guo-xiang/p/7857349.html</a>   </p>
+<p><a href="https://blog.csdn.net/qq_34491508/article/details/80049225" target="_blank" rel="noopener">https://blog.csdn.net/qq_34491508/article/details/80049225</a></p>
+<blockquote>
+<p>今天领导安排研究一下<code>java</code>程序中调用<code>R</code>脚本,一听当时就蒙了,这是什么骚操作,回家研究了一下,其实还挺简单的,在这里感谢一下伟大的程序员前辈们无私奉献的精神!</p>
 </blockquote>
-<h3 id="如何通过Redis实现分布式锁"><a href="#如何通过Redis实现分布式锁" class="headerlink" title="如何通过Redis实现分布式锁"></a>如何通过Redis实现分布式锁</h3><h4 id="分布式锁需要解决的问题"><a href="#分布式锁需要解决的问题" class="headerlink" title="分布式锁需要解决的问题"></a>分布式锁需要解决的问题</h4><ul>
-<li>互斥性 (只能有一个客户端获取到锁)</li>
-<li>安全性 (每个客户端只能解自己的锁)</li>
-<li>死锁 (某个客户端因某些原因宕机,无法释放锁,其它客户端无法获取到锁,从而形成死锁)</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/02/19/Redis扩展/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+<a id="more"></a>
+<p>如果对此一点一点都摸不着头脑的小白,建议先看上面两篇文章</p>
+<h4 id="下载安装R语言"><a href="#下载安装R语言" class="headerlink" title="下载安装R语言"></a>下载安装R语言</h4><p>参考 : <a href="https://blog.csdn.net/arlene_mzt/article/details/81318213" target="_blank" rel="noopener">https://blog.csdn.net/arlene_mzt/article/details/81318213</a></p>
+<p>安装完R语言之后,打开<code>R x64</code> , 输入</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">install.packages(<span class="string">"Rserve"</span>)</span><br></pre></td></tr></table></figure>
+<p>然后会让你选择下载地址,找到 <code>China</code> 开头的挨个试吧,我也是试了很多个,最后用 <code>Lanzhou</code> 那个下载成功了 </p>
+<p>在使用<em>Rserve()</em>启动服务前，需要先用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">library(Rserve)</span><br></pre></td></tr></table></figure>
+<p>加载<code>Rserve</code>然后启动服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Rserve()</span><br></pre></td></tr></table></figure>
+<p>出现 <code>Starting Rserve...&quot;D:PROGRA~1RR-33~1.1libraryRservelibsx64Rserve.exe&quot;</code> 表示成功,现在R语言的准备工作已经做好了</p>
+<h4 id="Java代码"><a href="#Java代码" class="headerlink" title="Java代码"></a>Java代码</h4><p>pom文件中加入:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.rosuda.REngine/Rserve --&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--REngine.jar和RserveEngine.jar   调用R程序使用--&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.rosuda.REngine<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>Rserve<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.8.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>该类负责获取连接</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.web.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.extern.slf4j.Slf4j;</span><br><span class="line"><span class="keyword">import</span> org.rosuda.REngine.Rserve.RConnection;</span><br><span class="line"><span class="keyword">import</span> org.rosuda.REngine.Rserve.RserveException;</span><br><span class="line"><span class="meta">@Slf</span>4j</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Rservel</span> </span>&#123;</span><br><span class="line">    <span class="comment">// R语言主程序path</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> String R_EXE_PATH = <span class="string">"D:/R-3.6.1/bin/R.exe"</span>;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * RservePath 负责使用Rserve</span></span><br><span class="line"><span class="comment">     * 文件内容:</span></span><br><span class="line"><span class="comment">     * library(Rserve)Rserve()&lt;/span&gt;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> String R__PATH = <span class="string">"D:/Rserve.R"</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> RConnection <span class="title">getRConnection</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> RConnection();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (RserveException e) &#123;</span><br><span class="line">			log.warn(<span class="string">"正在启动Rserve服务......"</span>);</span><br><span class="line">			<span class="keyword">try</span> &#123;</span><br><span class="line">				Runtime rn = Runtime.getRuntime();</span><br><span class="line">				<span class="comment">/*</span></span><br><span class="line"><span class="comment">				 * 不建议写成直接写成rn.exec("R_EXE_PATH R__PATH")，</span></span><br><span class="line"><span class="comment">				 * 如果这样学的画前面定义的R_EXE_PATH，R__PATH会提示 * 这两个变量没有用到 *</span></span><br><span class="line"><span class="comment">				 * 运行也许会出错，提示错误如下： * java.io.IOException: Cannot run program</span></span><br><span class="line"><span class="comment">				 * "D:Program": CreateProcess error=2, 系统找不到指定的文件。</span></span><br><span class="line"><span class="comment">				 */</span></span><br><span class="line">				String[] commandArgs = &#123; R_EXE_PATH, R__PATH &#125;;</span><br><span class="line">				rn.exec(commandArgs);</span><br><span class="line">				<span class="comment">// Thread.sleep(5000);</span></span><br><span class="line">			&#125; <span class="keyword">catch</span> (Exception e2) &#123;</span><br><span class="line">				e2.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">return</span> getRConnection();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>写一个类测试一下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.web.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.example.web.config.Rservel;</span><br><span class="line"><span class="keyword">import</span> org.rosuda.REngine.Rserve.RConnection;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 用户信息</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> ruoyi</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExecuteRController</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String MYADDPATH = <span class="string">"'D:/myAdd.R'"</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"executeR"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">testAsyncNoRetrun</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        RConnection connection = <span class="keyword">null</span>;</span><br><span class="line">        System.out.println(<span class="string">"执行脚本"</span>);</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// connection = new RConnection();</span></span><br><span class="line">            connection = Rservel.getRConnection();</span><br><span class="line">            <span class="comment">// connection.setStringEncoding("utf8");// 设置字符编码</span></span><br><span class="line">            connection.eval(<span class="string">"source("</span> + MYADDPATH + <span class="string">")"</span>);<span class="comment">//此处路径也可以这样写D:\\\\myAdd.R</span></span><br><span class="line">            <span class="keyword">int</span> num1=<span class="number">20</span>;</span><br><span class="line">            <span class="keyword">int</span> num2=<span class="number">30</span>;</span><br><span class="line">            sum=connection.eval(<span class="string">"myAdd("</span>+num1+<span class="string">","</span>+num2+<span class="string">")"</span>).asInteger();</span><br><span class="line">            System.out.println(<span class="string">"the sum="</span>+sum);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        connection.close();</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最后补充一下myAdd.R和Rserve.R文件内容</p>
+<p>myAdd.R : </p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">myAdd&lt;-<span class="keyword">function</span>(x,y) &#123;</span><br><span class="line">	sum = x + y</span><br><span class="line">	<span class="keyword">return</span> (sum)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Rserve.R :</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(Rserve)Rserve()&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -430,340 +441,38 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/11/Redis数据结构/">
-    
-
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zjh">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avtor.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Z">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/11/Redis数据结构/" itemprop="url">Redis数据结构</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-11T19:29:07+08:00">
-                2019-02-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/java/" rel="tag"># java</a>
           
-
+            <a href="/tags/R/" rel="tag"># R</a>
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/02/11/Redis数据结构/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/11/Redis数据结构/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <blockquote>
-<p>参考:<a href="https://juejin.im/book/5afc2e5f6fb9a07a9b362527" target="_blank" rel="noopener">掘金</a></p>
-</blockquote>
-<h3 id="What-is-the-Redis"><a href="#What-is-the-Redis" class="headerlink" title="What is the Redis?"></a>What is the Redis?</h3><blockquote>
-<p>Redis 是互联网技术领域使用最为广泛的存储中间件，它是「<strong>Re</strong>mote <strong>Di</strong>ctionary <strong>S</strong>ervice」的首字母缩写，也就是「远程字典服务」。Redis 以其超高的性能、完美的文档、简洁易懂的源码和丰富的客户端库支持在开源中间件领域广受好评。国内外很多大型互联网公司都在使用 Redis，比如 Twitter、YouPorn、暴雪娱乐、Github、StackOverflow、腾讯、阿里、京东、华为、新浪微博等等，很多中小型公司也都有应用。也可以说，对 Redis 的了解和应用实践已成为当下中高级后端开发者绕不开的必备技能。</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/02/11/Redis数据结构/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/07/springcloud爬坑之路之eureka/" rel="next" title="springcloud爬坑之路之eureka">
+                <i class="fa fa-chevron-left"></i> springcloud爬坑之路之eureka
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/30/Markdown/">
-    
-
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zjh">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avtor.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Z">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/30/Markdown/" itemprop="url">Markdown语法笔记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-30T16:16:58+08:00">
-                2019-01-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/01/30/Markdown/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/30/Markdown/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <blockquote>
-<p>初学Markdown,以此文章记录一下Markdown的语法. </p>
-</blockquote>
-<h3 id="What-is-the-Markdown"><a href="#What-is-the-Markdown" class="headerlink" title="What is the Markdown ?"></a>What is the Markdown ?</h3><blockquote>
-<p>Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。Markdown具有一系列衍生版本，用于扩展Markdown的功能（如表格、脚注、内嵌HTML等等），这些功能原初的Markdown尚不具备，它们能让Markdown转换成更多的格式，例如<a href="https://baike.baidu.com/item/LaTeX" target="_blank" rel="noopener">LaTeX</a>，<a href="https://baike.baidu.com/item/Docbook" target="_blank" rel="noopener">Docbook</a>。Markdown增强版中比较有名的有Markdown Extra、MultiMarkdown、 Maruku等。这些衍生版本要么基于工具，如<a href="https://baike.baidu.com/item/Pandoc" target="_blank" rel="noopener">Pandoc</a>；要么基于网站，如<a href="https://baike.baidu.com/item/GitHub" target="_blank" rel="noopener">GitHub</a>和<a href="https://baike.baidu.com/item/Wikipedia" target="_blank" rel="noopener">Wikipedia</a>，在语法上基本兼容，但在一些语法和渲染效果上有改动。<br>&lt;摘自百度百科&gt;</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/01/30/Markdown/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -773,14 +482,11 @@
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -788,6 +494,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -808,8 +521,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -906,6 +628,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#下载安装R语言"><span class="nav-number">1.</span> <span class="nav-text">下载安装R语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java代码"><span class="nav-number">2.</span> <span class="nav-text">Java代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1035,6 +773,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
