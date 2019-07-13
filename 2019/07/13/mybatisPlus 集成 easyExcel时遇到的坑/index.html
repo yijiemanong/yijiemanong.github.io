@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="mybatisPlus,easyExcel,">
 
 
 
@@ -81,17 +81,18 @@
 
 
 
-<meta name="description" content="一只小码农的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="项目中mybatisPlus 集成 easyExcel因为自己的实体类要继承easyExcel的BaseRowModel类,用mybatisPlus自带的方法找不到cell_style_map字段,我特么惊了,这是个啥字段啊,去数据库也没发现这个字段,用自己写的方法就不报错,经过一系列骚操作,发现了BaseRowModel类中有一个属性private Map&amp;lt;Integer,CellStyl">
+<meta name="keywords" content="mybatisPlus,easyExcel">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mybatisPlus 集成 easyExcel时遇到的坑">
+<meta property="og:url" content="http://yoursite.com/2019/07/13/mybatisPlus 集成 easyExcel时遇到的坑/index.html">
 <meta property="og:site_name" content="Z">
-<meta property="og:description" content="一只小码农的个人博客">
+<meta property="og:description" content="项目中mybatisPlus 集成 easyExcel因为自己的实体类要继承easyExcel的BaseRowModel类,用mybatisPlus自带的方法找不到cell_style_map字段,我特么惊了,这是个啥字段啊,去数据库也没发现这个字段,用自己写的方法就不报错,经过一系列骚操作,发现了BaseRowModel类中有一个属性private Map&amp;lt;Integer,CellStyl">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-30T08:17:46.310Z">
+<meta property="og:updated_time" content="2019-07-13T06:53:29.142Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="一只小码农的个人博客">
+<meta name="twitter:title" content="mybatisPlus 集成 easyExcel时遇到的坑">
+<meta name="twitter:description" content="项目中mybatisPlus 集成 easyExcel因为自己的实体类要继承easyExcel的BaseRowModel类,用mybatisPlus自带的方法找不到cell_style_map字段,我特么惊了,这是个啥字段啊,去数据库也没发现这个字段,用自己写的方法就不报错,经过一系列骚操作,发现了BaseRowModel类中有一个属性private Map&amp;lt;Integer,CellStyl">
 
 
 
@@ -121,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/13/mybatisPlus 集成 easyExcel时遇到的坑/">
 
 
 
 
 
-  <title>tags | Z</title>
+  <title>mybatisPlus 集成 easyExcel时遇到的坑 | Z</title>
   
 
 
@@ -284,40 +285,187 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/13/mybatisPlus 集成 easyExcel时遇到的坑/">
     
+
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zjh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avtor.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Z">
+    </span>
+
     
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">tags</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 17 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/CountDownLatch/" style="font-size: 12px; color: #ccc">CountDownLatch</a> <a href="/tags/Fork-Join/" style="font-size: 12px; color: #ccc">Fork/Join</a> <a href="/tags/HashMap/" style="font-size: 12px; color: #ccc">HashMap</a> <a href="/tags/Markdown/" style="font-size: 12px; color: #ccc">Markdown</a> <a href="/tags/R/" style="font-size: 12px; color: #ccc">R</a> <a href="/tags/RabbitMQ/" style="font-size: 12px; color: #ccc">RabbitMQ</a> <a href="/tags/Redis/" style="font-size: 18px; color: #8e8e8e">Redis</a> <a href="/tags/easyExcel/" style="font-size: 12px; color: #ccc">easyExcel</a> <a href="/tags/eureka/" style="font-size: 12px; color: #ccc">eureka</a> <a href="/tags/java/" style="font-size: 30px; color: #111">java</a> <a href="/tags/mybatisPlus/" style="font-size: 12px; color: #ccc">mybatisPlus</a> <a href="/tags/springcloud/" style="font-size: 12px; color: #ccc">springcloud</a> <a href="/tags/博客/" style="font-size: 24px; color: #4f4f4f">博客</a> <a href="/tags/多线程/" style="font-size: 24px; color: #4f4f4f">多线程</a> <a href="/tags/并发/" style="font-size: 18px; color: #8e8e8e">并发</a> <a href="/tags/数据结构/" style="font-size: 12px; color: #ccc">数据结构</a> <a href="/tags/算法/" style="font-size: 12px; color: #ccc">算法</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">mybatisPlus 集成 easyExcel时遇到的坑</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-13T16:09:17+08:00">
+                2019-07-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/13/mybatisPlus 集成 easyExcel时遇到的坑/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/13/mybatisPlus 集成 easyExcel时遇到的坑/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h4 id="项目中mybatisPlus-集成-easyExcel"><a href="#项目中mybatisPlus-集成-easyExcel" class="headerlink" title="项目中mybatisPlus 集成 easyExcel"></a>项目中mybatisPlus 集成 easyExcel</h4><p>因为自己的实体类要继承<code>easyExcel</code>的<code>BaseRowModel</code>类,用<code>mybatisPlus</code>自带的方法找不到<code>cell_style_map</code>字段,我特么惊了,这是个啥字段啊,去数据库也没发现这个字段,用自己写的方法就不报错,经过一系列骚操作,发现了<code>BaseRowModel</code>类中有一个属性<code>private Map&lt;Integer,CellStyle&gt; cellStyleMap = new HashMap&lt;Integer,CellStyle&gt;();</code>,就是他导致的报错.</p>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><ol>
+<li><p>于是乎去百度解决方案,查看<a href="https://github.com/baomidou/mybatis-plus/issues/1122" target="_blank" rel="noopener"><strong>mybatis-plus</strong></a>,在数据库添加字段<code>cell_style_map</code>,这是什么神仙操作?(不推荐)</p>
+</li>
+<li><p>在自己的实体类中加入该属性(推荐)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@TableField</span>(exist = <span class="keyword">false</span>) <span class="comment">// 忽略该属性</span></span><br><span class="line"><span class="keyword">private</span> Map&lt;Integer,CellStyle&gt; cellStyleMap = <span class="keyword">new</span> HashMap&lt;Integer,CellStyle&gt;();</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/mybatisPlus/" rel="tag"># mybatisPlus</a>
+          
+            <a href="/tags/easyExcel/" rel="tag"># easyExcel</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/10/Java程序调用R脚本/" rel="next" title="Java程序调用R脚本">
+                <i class="fa fa-chevron-left"></i> Java程序调用R脚本
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -353,8 +501,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -451,6 +608,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#项目中mybatisPlus-集成-easyExcel"><span class="nav-number">1.</span> <span class="nav-text">项目中mybatisPlus 集成 easyExcel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决方案"><span class="nav-number">2.</span> <span class="nav-text">解决方案</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
