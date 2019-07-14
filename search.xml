@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[mybatisPlus 集成 easyExcel时遇到的坑]]></title>
     <url>%2F2019%2F07%2F13%2FmybatisPlus%20%E9%9B%86%E6%88%90%20easyExcel%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%2F</url>
-    <content type="text"><![CDATA[项目中mybatisPlus 集成 easyExcel因为自己的实体类要继承easyExcel的BaseRowModel类,用mybatisPlus自带的方法找不到cell_style_map字段,我特么惊了,这是个啥字段啊,去数据库也没发现这个字段,用自己写的方法就不报错,经过一系列骚操作,发现了BaseRowModel类中有一个属性private Map&lt;Integer,CellStyle&gt; cellStyleMap = new HashMap&lt;Integer,CellStyle&gt;();,就是他导致的报错. 解决方案 于是乎去百度解决方案,查看mybatis-plus,在数据库添加字段cell_style_map,这是什么神仙操作?(不推荐) 在自己的实体类中加入该属性(推荐) 12@TableField(exist = false) // 忽略该属性private Map&lt;Integer,CellStyle&gt; cellStyleMap = new HashMap&lt;Integer,CellStyle&gt;();]]></content>
+    <content type="text"><![CDATA[没有cell_style_map字段用mybatisPlus自带的方法找不到cell_style_map字段,我特么惊了,这是个啥字段啊,去数据库也没发现这个字段,用自己写的方法就不报错,经过一系列骚操作,发现了BaseRowModel类中有一个属性private Map&lt;Integer,CellStyle&gt; cellStyleMap = new HashMap&lt;Integer,CellStyle&gt;();,就是他导致的报错. 解决方案 于是乎去百度解决方案,查看mybatis-plus,在数据库添加字段cell_style_map,这是什么神仙操作?(不推荐) 在自己的实体类中加入该属性(推荐) 12@TableField(exist = false) // 忽略该属性private Map&lt;Integer,CellStyle&gt; cellStyleMap = new HashMap&lt;Integer,CellStyle&gt;(); 导入Excel获取不到数据导入数据时AnalysisEventListener类中invoke方法中获取不到数据 解决方案实体类中@ExcelProperty(index = 0,value = &quot;&quot;),查看index属性是否加上了,别问我怎么知道的,全特么是泪!]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>
@@ -38,9 +38,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[springboot + mybatisPlus3 多数据源 + 代码生成器]]></title>
-    <url>%2F2019%2F06%2F05%2Fspringboot%20%2B%20mybatisPlus%20%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90%2F</url>
-    <content type="text"><![CDATA[springboot + mybatisPlus3 多数据源 + 代码生成器 参考: https://gitee.com/y_project/RuoYi 简单的把若依项目里面多数据源抽离出来,然后集成了mybatisPlus3地址:https://gitee.com/yijiemanong6/springboot-mybatisPlus]]></content>
+    <title><![CDATA[springBoot + mybatisPlus3 多数据源 + easyExcel]]></title>
+    <url>%2F2019%2F06%2F05%2FspringBoot%20%2B%20mybatisPlus3%20%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90%20%2B%20easyExcel%2F</url>
+    <content type="text"><![CDATA[参考: https://gitee.com/y_project/RuoYi https://gitee.com/wang-wen-xuan-july/easy-excel-utils 简单的把若依项目里面多数据源抽离出来,然后集成了mybatisPlus3, easyExcel导入导出 地址:https://gitee.com/yijiemanong6/springboot-mybatisPlus]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>

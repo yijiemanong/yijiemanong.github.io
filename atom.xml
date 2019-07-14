@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-07-13T06:56:54.341Z</updated>
+  <updated>2019-07-13T15:29:41.740Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,13 +21,13 @@
     <link href="http://yoursite.com/2019/07/13/mybatisPlus%20%E9%9B%86%E6%88%90%20easyExcel%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/"/>
     <id>http://yoursite.com/2019/07/13/mybatisPlus 集成 easyExcel时遇到的坑/</id>
     <published>2019-07-13T08:09:17.000Z</published>
-    <updated>2019-07-13T06:56:54.341Z</updated>
+    <updated>2019-07-13T15:29:41.740Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="项目中mybatisPlus-集成-easyExcel"><a href="#项目中mybatisPlus-集成-easyExcel" class="headerlink" title="项目中mybatisPlus 集成 easyExcel"></a>项目中mybatisPlus 集成 easyExcel</h4><p>因为自己的实体类要继承<code>easyExcel</code>的<code>BaseRowModel</code>类,用<code>mybatisPlus</code>自带的方法找不到<code>cell_style_map</code>字段,我特么惊了,这是个啥字段啊,去数据库也没发现这个字段,用自己写的方法就不报错,经过一系列骚操作,发现了<code>BaseRowModel</code>类中有一个属性<code>private Map&lt;Integer,CellStyle&gt; cellStyleMap = new HashMap&lt;Integer,CellStyle&gt;();</code>,就是他导致的报错.</p><a id="more"></a><h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><ol><li><p>于是乎去百度解决方案,查看<a href="https://github.com/baomidou/mybatis-plus/issues/1122" target="_blank" rel="noopener"><strong>mybatis-plus</strong></a>,在数据库添加字段<code>cell_style_map</code>,这是什么神仙操作?(不推荐)</p></li><li><p>在自己的实体类中加入该属性(推荐)</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@TableField</span>(exist = <span class="keyword">false</span>) <span class="comment">// 忽略该属性</span></span><br><span class="line"><span class="keyword">private</span> Map&lt;Integer,CellStyle&gt; cellStyleMap = <span class="keyword">new</span> HashMap&lt;Integer,CellStyle&gt;();</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+    <content type="html"><![CDATA[<h4 id="没有cell-style-map字段"><a href="#没有cell-style-map字段" class="headerlink" title="没有cell_style_map字段"></a>没有cell_style_map字段</h4><p>用<code>mybatisPlus</code>自带的方法找不到<code>cell_style_map</code>字段,我特么惊了,这是个啥字段啊,去数据库也没发现这个字段,用自己写的方法就不报错,经过一系列骚操作,发现了<code>BaseRowModel</code>类中有一个属性<code>private Map&lt;Integer,CellStyle&gt; cellStyleMap = new HashMap&lt;Integer,CellStyle&gt;();</code>,就是他导致的报错.</p><a id="more"></a><h5 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h5><ol><li><p>于是乎去百度解决方案,查看<a href="https://github.com/baomidou/mybatis-plus/issues/1122" target="_blank" rel="noopener"><strong>mybatis-plus</strong></a>,在数据库添加字段<code>cell_style_map</code>,这是什么神仙操作?(不推荐)</p></li><li><p>在自己的实体类中加入该属性(推荐)</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@TableField</span>(exist = <span class="keyword">false</span>) <span class="comment">// 忽略该属性</span></span><br><span class="line"><span class="keyword">private</span> Map&lt;Integer,CellStyle&gt; cellStyleMap = <span class="keyword">new</span> HashMap&lt;Integer,CellStyle&gt;();</span><br></pre></td></tr></table></figure></li></ol><h4 id="导入Excel获取不到数据"><a href="#导入Excel获取不到数据" class="headerlink" title="导入Excel获取不到数据"></a>导入Excel获取不到数据</h4><p>导入数据时<code>AnalysisEventListener</code>类中<code>invoke</code>方法中获取不到数据</p><h5 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h5><p>实体类中<code>@ExcelProperty(index = 0,value = &quot;&quot;)</code>,查看<code>index</code>属性是否加上了,别问我怎么知道的,全特么是泪!</p>]]></content>
     
     <summary type="html">
     
-      &lt;h4 id=&quot;项目中mybatisPlus-集成-easyExcel&quot;&gt;&lt;a href=&quot;#项目中mybatisPlus-集成-easyExcel&quot; class=&quot;headerlink&quot; title=&quot;项目中mybatisPlus 集成 easyExcel&quot;&gt;&lt;/a&gt;项目中mybatisPlus 集成 easyExcel&lt;/h4&gt;&lt;p&gt;因为自己的实体类要继承&lt;code&gt;easyExcel&lt;/code&gt;的&lt;code&gt;BaseRowModel&lt;/code&gt;类,用&lt;code&gt;mybatisPlus&lt;/code&gt;自带的方法找不到&lt;code&gt;cell_style_map&lt;/code&gt;字段,我特么惊了,这是个啥字段啊,去数据库也没发现这个字段,用自己写的方法就不报错,经过一系列骚操作,发现了&lt;code&gt;BaseRowModel&lt;/code&gt;类中有一个属性&lt;code&gt;private Map&amp;lt;Integer,CellStyle&amp;gt; cellStyleMap = new HashMap&amp;lt;Integer,CellStyle&amp;gt;();&lt;/code&gt;,就是他导致的报错.&lt;/p&gt;
+      &lt;h4 id=&quot;没有cell-style-map字段&quot;&gt;&lt;a href=&quot;#没有cell-style-map字段&quot; class=&quot;headerlink&quot; title=&quot;没有cell_style_map字段&quot;&gt;&lt;/a&gt;没有cell_style_map字段&lt;/h4&gt;&lt;p&gt;用&lt;code&gt;mybatisPlus&lt;/code&gt;自带的方法找不到&lt;code&gt;cell_style_map&lt;/code&gt;字段,我特么惊了,这是个啥字段啊,去数据库也没发现这个字段,用自己写的方法就不报错,经过一系列骚操作,发现了&lt;code&gt;BaseRowModel&lt;/code&gt;类中有一个属性&lt;code&gt;private Map&amp;lt;Integer,CellStyle&amp;gt; cellStyleMap = new HashMap&amp;lt;Integer,CellStyle&amp;gt;();&lt;/code&gt;,就是他导致的报错.&lt;/p&gt;
     
     </summary>
     
@@ -99,19 +99,21 @@
   </entry>
   
   <entry>
-    <title>springboot + mybatisPlus3 多数据源 + 代码生成器</title>
-    <link href="http://yoursite.com/2019/06/05/springboot%20+%20mybatisPlus%20%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90/"/>
-    <id>http://yoursite.com/2019/06/05/springboot + mybatisPlus 多数据源/</id>
+    <title>springBoot + mybatisPlus3 多数据源 + easyExcel</title>
+    <link href="http://yoursite.com/2019/06/05/springBoot%20+%20mybatisPlus3%20%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90%20+%20easyExcel/"/>
+    <id>http://yoursite.com/2019/06/05/springBoot + mybatisPlus3 多数据源 + easyExcel/</id>
     <published>2019-06-05T12:42:04.000Z</published>
-    <updated>2019-06-07T05:15:04.598Z</updated>
+    <updated>2019-07-14T07:58:23.433Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="springboot-mybatisPlus3-多数据源-代码生成器"><a href="#springboot-mybatisPlus3-多数据源-代码生成器" class="headerlink" title="springboot + mybatisPlus3 多数据源 + 代码生成器"></a>springboot + mybatisPlus3 多数据源 + 代码生成器</h2><blockquote><p>参考: <a href="https://gitee.com/y_project/RuoYi" target="_blank" rel="noopener">https://gitee.com/y_project/RuoYi</a></p></blockquote><p>简单的把若依项目里面多数据源抽离出来,然后集成了mybatisPlus3<br>地址:<a href="https://gitee.com/yijiemanong6/springboot-mybatisPlus" target="_blank" rel="noopener">https://gitee.com/yijiemanong6/springboot-mybatisPlus</a></p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>参考:</p><p> <a href="https://gitee.com/y_project/RuoYi" target="_blank" rel="noopener">https://gitee.com/y_project/RuoYi</a></p><p> <a href="https://gitee.com/wang-wen-xuan-july/easy-excel-utils" target="_blank" rel="noopener">https://gitee.com/wang-wen-xuan-july/easy-excel-utils</a></p></blockquote><p>简单的把若依项目里面多数据源抽离出来,然后集成了<code>mybatisPlus3</code>, <code>easyExcel</code>导入导出</p><p>地址:<a href="https://gitee.com/yijiemanong6/springboot-mybatisPlus" target="_blank" rel="noopener">https://gitee.com/yijiemanong6/springboot-mybatisPlus</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;springboot-mybatisPlus3-多数据源-代码生成器&quot;&gt;&lt;a href=&quot;#springboot-mybatisPlus3-多数据源-代码生成器&quot; class=&quot;headerlink&quot; title=&quot;springboot + mybatisPlus
+        &lt;blockquote&gt;
+&lt;p&gt;参考:&lt;/p&gt;
+&lt;p&gt; &lt;a href=&quot;https://gitee.com/y_project/RuoYi&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://gitee.com/y_project/RuoYi&lt;/a&gt;
       
     
     </summary>
